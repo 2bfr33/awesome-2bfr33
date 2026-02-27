@@ -11,7 +11,9 @@ from typing import Dict, Iterable, List, Optional, Tuple
 DATA_PATH = Path("data/starred-repos.json")
 OUT_A = Path("docs/readme-variant-a.md")
 OUT_B = Path("docs/readme-variant-b.md")
+
 ACTIVE_DAYS = 180
+RECENT_STAR_DAYS = 30
 DESC_MAX = 140
 
 GROUP_RULES: List[Tuple[str, Tuple[str, ...]]] = [
@@ -36,23 +38,7 @@ GROUP_RULES: List[Tuple[str, Tuple[str, ...]]] = [
             "comfyui",
             "prompt",
             "machine learning",
-        ),
-    ),
-    (
-        "DevOps and Security",
-        (
-            "security",
-            "vulnerab",
-            "sbom",
-            "trivy",
-            "deploy",
-            "backup",
-            "monitor",
-            "firewall",
-            "alert",
-            "docker",
-            "compose",
-            "log",
+            "open source coding agent",
         ),
     ),
     (
@@ -77,6 +63,23 @@ GROUP_RULES: List[Tuple[str, Tuple[str, ...]]] = [
         ),
     ),
     (
+        "DevOps and Security",
+        (
+            "security",
+            "vulnerab",
+            "sbom",
+            "trivy",
+            "deploy",
+            "backup",
+            "monitor",
+            "firewall",
+            "alert",
+            "log",
+            "ci",
+            "cd",
+        ),
+    ),
+    (
         "Media and Content",
         (
             "media",
@@ -88,6 +91,7 @@ GROUP_RULES: List[Tuple[str, Tuple[str, ...]]] = [
             "aegisub",
             "handbrake",
             "mpv",
+            "qbittorrent",
         ),
     ),
     (
@@ -140,7 +144,14 @@ def fmt_date(value: Optional[str]) -> str:
     return dt.strftime("%Y-%m-%d") if dt else "-"
 
 
-def fmt_star_count(value: int) -> str:
+def fmt_datetime_utc(value: Optional[str]) -> str:
+    dt = parse_dt(value)
+    if not dt:
+        dt = datetime.now(timezone.utc)
+    return dt.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
+
+def fmt_stars(value: int) -> str:
     return f"{value:,}"
 
 
@@ -148,8 +159,7 @@ def clean_text(text: Optional[str], max_len: int = DESC_MAX) -> str:
     if not text:
         return "No description."
     cleaned = re.sub(r"\s+", " ", text).strip()
-    cleaned = re.sub(r"[^\x20-\x7E]", "", cleaned)
-    cleaned = cleaned.strip()
+    cleaned = re.sub(r"[^\x20-\x7E]", "", cleaned).strip()
     if len(cleaned) <= max_len:
         return cleaned
     return cleaned[: max_len - 3].rstrip() + "..."
@@ -161,20 +171,33 @@ def slugify(title: str) -> str:
 
 
 def classify_repo(repo: Dict[str, object]) -> str:
-    name = str(repo.get("name_with_owner") or "")
-    desc = str(repo.get("description") or "")
+    name = str(repo.get("name_with_owner") or "").lower()
+    desc = str(repo.get("description") or "").lower()
     lang = str(repo.get("primary_language") or "")
-    full_text = f"{name} {desc} {lang}".lower()
+    full_text = f"{name} {desc} {lang.lower()}"
+
+    if "/awesome-" in name or name.startswith("awesome-") or "curated list" in desc:
+        return "Reference Lists"
 
     for group, keywords in GROUP_RULES:
+        if group == "Reference Lists":
+            continue
         if any(keyword in full_text for keyword in keywords):
             return group
 
-    if lang in {"TypeScript", "JavaScript", "Python", "Go", "Rust"}:
+    if lang in {"TypeScript", "JavaScript", "Python", "Go", "Rust", "Zig"}:
         return "Developer Tools"
     if lang in {"C", "C++", "C#", "PowerShell", "Shell", "Batchfile", "Kotlin", "Dart"}:
         return "System, Desktop and Mobile"
     return "Other"
+
+
+def sort_key(repo: Dict[str, object]) -> Tuple[datetime, int]:
+    pushed = parse_dt(str(repo.get("pushed_at") or ""))
+    if pushed is None:
+        pushed = datetime(1970, 1, 1, tzinfo=timezone.utc)
+    stars = int(repo.get("stargazer_count") or 0)
+    return pushed, stars
 
 
 def split_by_activity(
@@ -201,25 +224,57 @@ def group_repositories(
         grouped[group_name] = []
     grouped["Other"] = []
 
-    for repo in repos:
+    sorted_repos = sorted(repos, key=sort_key, reverse=True)
+    for repo in sorted_repos:
         grouped[classify_repo(repo)].append(repo)
 
     return grouped
 
 
-def render_repo_bullet(repo: Dict[str, object]) -> List[str]:
+def freshness_label(repo: Dict[str, object], snapshot_dt: datetime) -> str:
+    pushed = parse_dt(str(repo.get("pushed_at") or ""))
+    if not pushed:
+        return "stale"
+    days = (snapshot_dt.date() - pushed.date()).days
+    if days <= 7:
+        return "fresh this week"
+    if days <= 30:
+        return "fresh this month"
+    if days <= ACTIVE_DAYS:
+        return "active"
+    return "stale"
+
+
+def render_repo_entry(
+    repo: Dict[str, object],
+    snapshot_dt: datetime,
+    include_commit: bool,
+    include_freshness: bool,
+) -> List[str]:
     name = str(repo["name_with_owner"])
     url = str(repo["url"])
     description = clean_text(repo.get("description"))
     language = str(repo.get("primary_language") or "Unknown")
-    stars = fmt_star_count(int(repo.get("stargazer_count") or 0))
+    stars = fmt_stars(int(repo.get("stargazer_count") or 0))
     pushed = fmt_date(str(repo.get("pushed_at") or ""))
     commit = fmt_date(str(repo.get("last_commit_at") or ""))
     starred = fmt_date(str(repo.get("starred_at") or ""))
+
+    meta_parts = [
+        f"`{language}`",
+        f"`Stars {stars}`",
+        f"`Push {pushed}`",
+    ]
+    if include_commit:
+        meta_parts.append(f"`Commit {commit}`")
+    meta_parts.append(f"`Starred {starred}`")
+    if include_freshness:
+        meta_parts.append(f"`{freshness_label(repo, snapshot_dt)}`")
+
     return [
         f"- [{name}]({url})",
         f"  {description}",
-        f"  `{language}` | `Stars {stars}` | `Push {pushed}` | `Commit {commit}` | `Starred {starred}`",
+        f"  {' | '.join(meta_parts)}",
     ]
 
 
@@ -228,79 +283,137 @@ def render_group_index(grouped: "OrderedDict[str, List[Dict[str, object]]]") -> 
     for group_name, repos in grouped.items():
         if not repos:
             continue
-        slug = slugify(group_name)
-        lines.append(f"- [{group_name} ({len(repos)})](#{slug})")
+        lines.append(f"- [{group_name} ({len(repos)})](#{slugify(group_name)})")
     return lines
 
 
+def render_stats_block(generated_at: str, total: int, active: int, slow: int) -> List[str]:
+    return [
+        f"Last updated: `{fmt_datetime_utc(generated_at)}`",
+        f"Total repositories: **{total}**",
+        f"Active projects (push <= {ACTIVE_DAYS} days): **{active}**",
+        f"Slower projects: **{slow}**",
+        "Auto-updated daily.",
+    ]
+
+
 def build_variant_a(login: str, generated_at: str, repos: List[Dict[str, object]]) -> str:
-    grouped = group_repositories(repos)
+    snapshot_dt = parse_dt(generated_at) or datetime.now(timezone.utc)
+    active, slow = split_by_activity(repos, snapshot_dt)
+    grouped_all = group_repositories(repos)
+    grouped_active = group_repositories(active)
+    grouped_slow = group_repositories(slow)
+
     lines: List[str] = [
-        "# README Design A: Topic Groups",
+        "# README Variant B2 - Compact",
         "",
-        f"Preview layout for **{login}**.",
-        "",
-        f"Generated from starred snapshot: `{generated_at}`",
-        f"Total repositories: **{len(repos)}**",
-        "",
-        "## Group Index",
+        f"Auto-generated list of GitHub stars for **{login}**.",
         "",
     ]
-    lines.extend(render_group_index(grouped))
-    lines.extend(["", "## Projects", ""])
+    lines.extend(render_stats_block(generated_at, len(repos), len(active), len(slow)))
+    lines.extend(["", "## Group Index", ""])
+    lines.extend(render_group_index(grouped_all))
+    lines.extend(["", f"## Active Projects ({len(active)})", ""])
 
-    for group_name, group_repos in grouped.items():
+    for group_name, group_repos in grouped_active.items():
         if not group_repos:
             continue
-        lines.append(f"## {group_name} ({len(group_repos)})")
+        lines.append(f"### {group_name} ({len(group_repos)})")
         lines.append("")
         for repo in group_repos:
-            lines.extend(render_repo_bullet(repo))
+            lines.extend(
+                render_repo_entry(
+                    repo=repo,
+                    snapshot_dt=snapshot_dt,
+                    include_commit=False,
+                    include_freshness=True,
+                )
+            )
             lines.append("")
+
+    lines.extend([f"## Slower Projects ({len(slow)})", ""])
+    for group_name, group_repos in grouped_slow.items():
+        if not group_repos:
+            continue
+        lines.append("<details>")
+        lines.append(f"<summary><strong>{group_name}</strong> ({len(group_repos)})</summary>")
+        lines.append("")
+        for repo in group_repos:
+            lines.extend(
+                render_repo_entry(
+                    repo=repo,
+                    snapshot_dt=snapshot_dt,
+                    include_commit=False,
+                    include_freshness=True,
+                )
+            )
+            lines.append("")
+        lines.append("</details>")
+        lines.append("")
 
     return "\n".join(lines).strip() + "\n"
 
 
 def build_variant_b(login: str, generated_at: str, repos: List[Dict[str, object]]) -> str:
-    grouped_all = group_repositories(repos)
     snapshot_dt = parse_dt(generated_at) or datetime.now(timezone.utc)
     active, slow = split_by_activity(repos, snapshot_dt)
+    grouped_all = group_repositories(repos)
     grouped_active = group_repositories(active)
     grouped_slow = group_repositories(slow)
-    highlights = sorted(repos, key=lambda x: int(x.get("stargazer_count") or 0), reverse=True)[:12]
+
+    recent_threshold = snapshot_dt - timedelta(days=RECENT_STAR_DAYS)
+    recently_starred = [
+        repo
+        for repo in sorted(
+            repos,
+            key=lambda r: parse_dt(str(r.get("starred_at") or ""))
+            or datetime(1970, 1, 1, tzinfo=timezone.utc),
+            reverse=True,
+        )
+        if (parse_dt(str(repo.get("starred_at") or "")) or datetime(1970, 1, 1, tzinfo=timezone.utc))
+        >= recent_threshold
+    ][:10]
 
     lines: List[str] = [
-        "# README Design B: Highlights + Activity",
+        "# README Variant B2 - Curated",
         "",
-        f"Preview layout for **{login}**.",
-        "",
-        f"Generated from starred snapshot: `{generated_at}`",
-        f"Total repositories: **{len(repos)}**",
-        f"Active projects (push <= {ACTIVE_DAYS} days): **{len(active)}**",
-        f"Slower projects: **{len(slow)}**",
-        "",
-        "## Group Index",
+        f"Auto-generated list of GitHub stars for **{login}**.",
         "",
     ]
+    lines.extend(render_stats_block(generated_at, len(repos), len(active), len(slow)))
+    lines.extend(["", "## Group Index", ""])
     lines.extend(render_group_index(grouped_all))
-    lines.extend(["", "## Highlights (Top by Stars)", ""])
 
-    for idx, repo in enumerate(highlights, start=1):
-        name = str(repo["name_with_owner"])
-        url = str(repo["url"])
-        description = clean_text(repo.get("description"), max_len=100)
-        stars = fmt_star_count(int(repo.get("stargazer_count") or 0))
-        lines.append(f"{idx}. [{name}]({url}) - {description} (`Stars {stars}`)")
+    lines.extend(["", f"## Recently Starred (last {RECENT_STAR_DAYS} days)", ""])
+    if recently_starred:
+        for idx, repo in enumerate(recently_starred, start=1):
+            name = str(repo["name_with_owner"])
+            url = str(repo["url"])
+            desc = clean_text(repo.get("description"), max_len=95)
+            starred = fmt_date(str(repo.get("starred_at") or ""))
+            stars = fmt_stars(int(repo.get("stargazer_count") or 0))
+            lines.append(
+                f"{idx}. [{name}]({url}) - {desc} (`Starred {starred}` | `Stars {stars}`)"
+            )
+    else:
+        lines.append("- No recently starred repositories.")
 
     lines.extend(["", f"## Active Projects ({len(active)})", ""])
     for group_name, group_repos in grouped_active.items():
         if not group_repos:
             continue
-        lines.append(f"<details>")
+        lines.append("<details>")
         lines.append(f"<summary><strong>{group_name}</strong> ({len(group_repos)})</summary>")
         lines.append("")
         for repo in group_repos:
-            lines.extend(render_repo_bullet(repo))
+            lines.extend(
+                render_repo_entry(
+                    repo=repo,
+                    snapshot_dt=snapshot_dt,
+                    include_commit=False,
+                    include_freshness=True,
+                )
+            )
             lines.append("")
         lines.append("</details>")
         lines.append("")
@@ -309,14 +422,32 @@ def build_variant_b(login: str, generated_at: str, repos: List[Dict[str, object]
     for group_name, group_repos in grouped_slow.items():
         if not group_repos:
             continue
-        lines.append(f"<details>")
+        lines.append("<details>")
         lines.append(f"<summary><strong>{group_name}</strong> ({len(group_repos)})</summary>")
         lines.append("")
         for repo in group_repos:
-            lines.extend(render_repo_bullet(repo))
+            lines.extend(
+                render_repo_entry(
+                    repo=repo,
+                    snapshot_dt=snapshot_dt,
+                    include_commit=True,
+                    include_freshness=True,
+                )
+            )
             lines.append("")
         lines.append("</details>")
         lines.append("")
+
+    lines.extend(
+        [
+            "## Optional Add-ons",
+            "",
+            "- Add a manual `Pinned Picks` section (3-8 projects) to keep the list personal.",
+            "- Add short personal notes per project (`why it matters`, `what to try first`).",
+            "- Add tag badges (`infra`, `ai`, `security`, `media`) for faster scanning.",
+            "- Add archive markers and hide archived repos by default.",
+        ]
+    )
 
     return "\n".join(lines).strip() + "\n"
 

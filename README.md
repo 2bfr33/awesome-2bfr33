@@ -1,249 +1,280 @@
-# Awesome Starred Projects
+# ⭐ Awesome Starred Projects
 
 Auto-generated list of GitHub stars for **2bfr33**.
 
-Last snapshot: 2026-02-27 08:59 UTC
-Total 44 | Active 43 | Slower 1 | Daily auto-update
+![Total](https://img.shields.io/badge/total-44-blue?style=flat-square) ![Active](https://img.shields.io/badge/active-43-brightgreen?style=flat-square) ![Slower](https://img.shields.io/badge/slower-1-orange?style=flat-square) ![Auto-update](https://img.shields.io/badge/auto--update-daily-lightgrey?style=flat-square)
+
+> Last snapshot: 2026-02-27 08:59 UTC
 
 ## Group Index
 
-- [Reference Lists (2)](#reference-lists)
-- [AI and Automation (6)](#ai-and-automation)
-- [Self-Hosting and Homelab (19)](#self-hosting-and-homelab)
-- [DevOps and Security (3)](#devops-and-security)
-- [Media and Content (6)](#media-and-content)
-- [System, Desktop and Mobile (6)](#system-desktop-and-mobile)
-- [Developer Tools (2)](#developer-tools)
+- 📚 [Reference Lists](#reference-lists) — 2 repos · ⭐ 293.6K
+- 🤖 [AI and Automation](#ai-and-automation) — 6 repos · ⭐ 272.5K
+- 🏠 [Self-Hosting and Homelab](#self-hosting-and-homelab) — 19 repos · ⭐ 430.4K
+- 🔐 [DevOps and Security](#devops-and-security) — 3 repos · ⭐ 46.9K
+- 🎬 [Media and Content](#media-and-content) — 6 repos · ⭐ 67.1K
+- 💻 [System, Desktop and Mobile](#system-desktop-and-mobile) — 6 repos · ⭐ 274.1K
+- 🛠️ [Developer Tools](#developer-tools) — 2 repos · ⭐ 33.4K
 
-## Recently Starred (last 30 days)
+## 🏆 Top 5 by Stars
 
-1. [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) - CLI tool for configuring and monitoring Claude Code (`Starred 2026-02-27` | `Stars 21,411`)
-2. [anomalyco/opencode](https://github.com/anomalyco/opencode) - The open source coding agent. (`Starred 2026-02-27` | `Stars 112,056`)
-3. [KeygraphHQ/shannon](https://github.com/KeygraphHQ/shannon) - Fully autonomous AI hacker to find actual exploits in your web apps. Shannon has achieved a... (`Starred 2026-02-27` | `Stars 25,443`)
-4. [Maciek-roboblog/Claude-Code-Usage-Monitor](https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor) - Real-time Claude Code usage monitor with predictions and warnings (`Starred 2026-02-27` | `Stars 6,695`)
-5. [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI) - The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interf... (`Starred 2026-02-27` | `Stars 104,360`)
-6. [florisboard/florisboard](https://github.com/florisboard/florisboard) - An open-source keyboard for Android which respects your privacy. Currently in beta. (`Starred 2026-02-27` | `Stars 8,075`)
-7. [ImranR98/Obtainium](https://github.com/ImranR98/Obtainium) - Get Android app updates straight from the source. (`Starred 2026-02-27` | `Stars 15,476`)
-8. [nullclaw/nullclaw](https://github.com/nullclaw/nullclaw) - Fastest, smallest, and fully autonomous AI assistant infrastructure written in Zig (`Starred 2026-02-27` | `Stars 2,530`)
-9. [autobrr/qui](https://github.com/autobrr/qui) - A fast, single-binary qBittorrent web UI: manage multiple instances, automate torrent workfl... (`Starred 2026-02-27` | `Stars 3,302`)
-10. [louislam/dockge](https://github.com/louislam/dockge) - A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager (`Starred 2026-02-27` | `Stars 22,238`)
+| # | Repository | Stars | Language |
+|---|-----------|-------|----------|
+| 1 | [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | ⭐ 275.6K | `—` |
+| 2 | [massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts) | ⭐ 167.1K | `Batchfile` |
+| 3 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | ⭐ 112.1K | `TypeScript` |
+| 4 | [rustdesk/rustdesk](https://github.com/rustdesk/rustdesk) | ⭐ 108.2K | `Rust` |
+| 5 | [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI) | ⭐ 104.4K | `Python` |
 
-## Active Projects (43)
+## 🆕 Recently Starred (last 30 days)
+
+1. **[davila7/claude-code-templates](https://github.com/davila7/claude-code-templates)** — CLI tool for configuring and monitoring Claude Code  
+   `Python` · ⭐ 21.4K · starred 2026-02-27 · 🟢 fresh this week
+2. **[anomalyco/opencode](https://github.com/anomalyco/opencode)** — The open source coding agent.  
+   `TypeScript` · ⭐ 112.1K · starred 2026-02-27 · 🟢 fresh this week
+3. **[KeygraphHQ/shannon](https://github.com/KeygraphHQ/shannon)** — Fully autonomous AI hacker to find actual exploits in your web apps. Shannon has achieved a...  
+   `TypeScript` · ⭐ 25.4K · starred 2026-02-27 · 🟢 fresh this week
+4. **[Maciek-roboblog/Claude-Code-Usage-Monitor](https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor)** — Real-time Claude Code usage monitor with predictions and warnings  
+   `Python` · ⭐ 6.7K · starred 2026-02-27 · 🟠 active
+5. **[Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI)** — The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interf...  
+   `Python` · ⭐ 104.4K · starred 2026-02-27 · 🟢 fresh this week
+6. **[florisboard/florisboard](https://github.com/florisboard/florisboard)** — An open-source keyboard for Android which respects your privacy. Currently in beta.  
+   `Kotlin` · ⭐ 8.1K · starred 2026-02-27 · 🟡 fresh this month
+7. **[ImranR98/Obtainium](https://github.com/ImranR98/Obtainium)** — Get Android app updates straight from the source.  
+   `Dart` · ⭐ 15.5K · starred 2026-02-27 · 🟡 fresh this month
+8. **[nullclaw/nullclaw](https://github.com/nullclaw/nullclaw)** — Fastest, smallest, and fully autonomous AI assistant infrastructure written in Zig  
+   `Zig` · ⭐ 2.5K · starred 2026-02-27 · 🟢 fresh this week
+9. **[autobrr/qui](https://github.com/autobrr/qui)** — A fast, single-binary qBittorrent web UI: manage multiple instances, automate torrent workfl...  
+   `Go` · ⭐ 3.3K · starred 2026-02-27 · 🟢 fresh this week
+10. **[louislam/dockge](https://github.com/louislam/dockge)** — A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager  
+   `TypeScript` · ⭐ 22.2K · starred 2026-02-27 · 🟠 active
+
+## 🟢 Active Projects (43)
 
 <details>
-<summary><strong>Reference Lists</strong> (2)</summary>
+<summary>📚 <strong>Reference Lists</strong> — 2 repos · ⭐ 293.6K</summary>
 
-- [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)
+- **[awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)**
   A list of Free Software network services and web applications which can be hosted on your own servers
-  Language Unknown | Stars 275,574 | Push 2026-02-22 | Commit 2026-02-22 | Starred 2026-02-27 | Status fresh this week
+  `Unknown` · ⭐ 275.6K · pushed 2026-02-22 · 🟢 fresh this week
 
-- [pluja/awesome-privacy](https://github.com/pluja/awesome-privacy)
+- **[pluja/awesome-privacy](https://github.com/pluja/awesome-privacy)**
   Awesome Privacy - A curated list of services and alternatives that respect your privacy because PRIVACY MATTERS.
-  Language Unknown | Stars 18,071 | Push 2026-02-16 | Commit 2026-02-16 | Starred 2026-02-27 | Status fresh this month
+  `Unknown` · ⭐ 18.1K · pushed 2026-02-16 · 🟡 fresh this month
 
 </details>
 
 <details>
-<summary><strong>AI and Automation</strong> (6)</summary>
+<summary>🤖 <strong>AI and Automation</strong> — 6 repos · ⭐ 272.5K</summary>
 
-- [anomalyco/opencode](https://github.com/anomalyco/opencode)
+- **[anomalyco/opencode](https://github.com/anomalyco/opencode)**
   The open source coding agent.
-  Language TypeScript | Stars 112,056 | Push 2026-02-27 | Commit 2026-02-27 | Starred 2026-02-27 | Status fresh this week
+  `TypeScript` · ⭐ 112.1K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI)
+- **[Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI)**
   The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.
-  Language Python | Stars 104,360 | Push 2026-02-27 | Commit 2026-02-27 | Starred 2026-02-27 | Status fresh this week
+  `Python` · ⭐ 104.4K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates)
+- **[davila7/claude-code-templates](https://github.com/davila7/claude-code-templates)**
   CLI tool for configuring and monitoring Claude Code
-  Language Python | Stars 21,411 | Push 2026-02-27 | Commit 2026-02-27 | Starred 2026-02-27 | Status fresh this week
+  `Python` · ⭐ 21.4K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [nullclaw/nullclaw](https://github.com/nullclaw/nullclaw)
+- **[nullclaw/nullclaw](https://github.com/nullclaw/nullclaw)**
   Fastest, smallest, and fully autonomous AI assistant infrastructure written in Zig
-  Language Zig | Stars 2,530 | Push 2026-02-27 | Commit 2026-02-27 | Starred 2026-02-27 | Status fresh this week
+  `Zig` · ⭐ 2.5K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [KeygraphHQ/shannon](https://github.com/KeygraphHQ/shannon)
+- **[KeygraphHQ/shannon](https://github.com/KeygraphHQ/shannon)**
   Fully autonomous AI hacker to find actual exploits in your web apps. Shannon has achieved a 96.15% success rate on the hint-free, source-...
-  Language TypeScript | Stars 25,443 | Push 2026-02-24 | Commit 2026-02-24 | Starred 2026-02-27 | Status fresh this week
+  `TypeScript` · ⭐ 25.4K · pushed 2026-02-24 · 🟢 fresh this week
 
-- [Maciek-roboblog/Claude-Code-Usage-Monitor](https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor)
+- **[Maciek-roboblog/Claude-Code-Usage-Monitor](https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor)**
   Real-time Claude Code usage monitor with predictions and warnings
-  Language Python | Stars 6,695 | Push 2025-09-14 | Commit 2025-07-23 | Starred 2026-02-27 | Status active
+  `Python` · ⭐ 6.7K · pushed 2025-09-14 · 🟠 active
 
 </details>
 
 <details>
-<summary><strong>Self-Hosting and Homelab</strong> (18)</summary>
+<summary>🏠 <strong>Self-Hosting and Homelab</strong> — 18 repos · ⭐ 429.2K</summary>
 
-- [community-scripts/ProxmoxVE](https://github.com/community-scripts/ProxmoxVE)
+- **[community-scripts/ProxmoxVE](https://github.com/community-scripts/ProxmoxVE)**
   Proxmox VE Helper-Scripts (Community Edition)
-  Language Shell | Stars 26,549 | Push 2026-02-27 | Commit 2026-02-27 | Starred 2026-02-27 | Status fresh this week
+  `Shell` · ⭐ 26.5K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [HeyPuter/puter](https://github.com/HeyPuter/puter)
+- **[HeyPuter/puter](https://github.com/HeyPuter/puter)**
   🌐 The Internet Computer! Free, Open-Source, and Self-Hostable.
-  Language JavaScript | Stars 39,670 | Push 2026-02-27 | Commit 2026-02-27 | Starred 2026-02-27 | Status fresh this week
+  `JavaScript` · ⭐ 39.7K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [nicotsx/zerobyte](https://github.com/nicotsx/zerobyte)
+- **[nicotsx/zerobyte](https://github.com/nicotsx/zerobyte)**
   Backup automation for self-hosters. Built on top of restic
-  Language TypeScript | Stars 5,733 | Push 2026-02-27 | Commit 2026-02-26 | Starred 2026-02-27 | Status fresh this week
+  `TypeScript` · ⭐ 5.7K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [kimdre/doco-cd](https://github.com/kimdre/doco-cd)
+- **[kimdre/doco-cd](https://github.com/kimdre/doco-cd)**
   Docker Compose Continuous Deployment
-  Language Go | Stars 1,150 | Push 2026-02-27 | Commit 2026-02-27 | Starred 2026-02-27 | Status fresh this week
+  `Go` · ⭐ 1.1K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [rustdesk/rustdesk](https://github.com/rustdesk/rustdesk)
+- **[rustdesk/rustdesk](https://github.com/rustdesk/rustdesk)**
   An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.
-  Language Rust | Stars 108,217 | Push 2026-02-27 | Commit 2026-02-27 | Starred 2026-02-27 | Status fresh this week
+  `Rust` · ⭐ 108.2K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [moghtech/komodo](https://github.com/moghtech/komodo)
+- **[moghtech/komodo](https://github.com/moghtech/komodo)**
   🦎 a tool to build and deploy software on many servers 🦎
-  Language Rust | Stars 10,394 | Push 2026-02-27 | Commit 2025-09-27 | Starred 2026-02-27 | Status fresh this week
+  `Rust` · ⭐ 10.4K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [gethomepage/homepage](https://github.com/gethomepage/homepage)
+- **[gethomepage/homepage](https://github.com/gethomepage/homepage)**
   A highly customizable homepage (or startpage / application dashboard) with Docker and service API integrations.
-  Language JavaScript | Stars 28,626 | Push 2026-02-27 | Commit 2026-02-23 | Starred 2026-02-27 | Status fresh this week
+  `JavaScript` · ⭐ 28.6K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [henrygd/beszel](https://github.com/henrygd/beszel)
+- **[henrygd/beszel](https://github.com/henrygd/beszel)**
   Lightweight server monitoring hub with historical data, docker stats, and alerts.
-  Language Go | Stars 19,665 | Push 2026-02-26 | Commit 2026-02-26 | Starred 2026-02-27 | Status fresh this week
+  `Go` · ⭐ 19.7K · pushed 2026-02-26 · 🟢 fresh this week
 
-- [maxdorninger/MediaManager](https://github.com/maxdorninger/MediaManager)
+- **[maxdorninger/MediaManager](https://github.com/maxdorninger/MediaManager)**
   A modern selfhosted media management system for your media library
-  Language Python | Stars 3,114 | Push 2026-02-26 | Commit 2026-02-26 | Starred 2026-02-27 | Status fresh this week
+  `Python` · ⭐ 3.1K · pushed 2026-02-26 · 🟢 fresh this week
 
-- [ZoeyVid/NPMplus](https://github.com/ZoeyVid/NPMplus)
+- **[ZoeyVid/NPMplus](https://github.com/ZoeyVid/NPMplus)**
   a fork of nginx-proxy-manager
-  Language TypeScript | Stars 1,872 | Push 2026-02-26 | Commit 2026-02-26 | Starred 2026-02-27 | Status fresh this week
+  `TypeScript` · ⭐ 1.9K · pushed 2026-02-26 · 🟢 fresh this week
 
-- [hackthedev/dcts-shipping](https://github.com/hackthedev/dcts-shipping)
+- **[hackthedev/dcts-shipping](https://github.com/hackthedev/dcts-shipping)**
   A Chat Platform like Discord but self-hostable like TeamSpeak
-  Language JavaScript | Stars 549 | Push 2026-02-26 | Commit 2026-02-19 | Starred 2026-02-27 | Status fresh this week
+  `JavaScript` · ⭐ 549 · pushed 2026-02-26 · 🟢 fresh this week
 
-- [coder/code-server](https://github.com/coder/code-server)
+- **[coder/code-server](https://github.com/coder/code-server)**
   VS Code in the browser
-  Language TypeScript | Stars 76,394 | Push 2026-02-25 | Commit 2026-02-11 | Starred 2026-02-27 | Status fresh this week
+  `TypeScript` · ⭐ 76.4K · pushed 2026-02-25 · 🟢 fresh this week
 
-- [linkwarden/linkwarden](https://github.com/linkwarden/linkwarden)
+- **[linkwarden/linkwarden](https://github.com/linkwarden/linkwarden)**
   ⚡️⚡️⚡️ Self-hosted collaborative bookmark manager to collect, read, annotate, and fully preserve what matters, all in one place.
-  Language TypeScript | Stars 17,343 | Push 2026-02-25 | Commit 2026-01-05 | Starred 2026-02-27 | Status fresh this week
+  `TypeScript` · ⭐ 17.3K · pushed 2026-02-25 · 🟢 fresh this week
 
-- [sissbruecker/linkding](https://github.com/sissbruecker/linkding)
+- **[sissbruecker/linkding](https://github.com/sissbruecker/linkding)**
   Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker.
-  Language Python | Stars 10,207 | Push 2026-02-20 | Commit 2026-01-25 | Starred 2026-02-27 | Status fresh this week
+  `Python` · ⭐ 10.2K · pushed 2026-02-20 · 🟢 fresh this week
 
-- [Lissy93/dashy](https://github.com/Lissy93/dashy)
+- **[Lissy93/dashy](https://github.com/Lissy93/dashy)**
   🚀 A self-hostable personal dashboard built for you. Includes status-checking, widgets, themes, icon packs, a UI editor and tons more!
-  Language Vue | Stars 24,101 | Push 2026-02-15 | Commit 2026-02-15 | Starred 2026-02-27 | Status fresh this month
+  `Vue` · ⭐ 24.1K · pushed 2026-02-15 · 🟡 fresh this month
 
-- [louislam/dockge](https://github.com/louislam/dockge)
+- **[louislam/dockge](https://github.com/louislam/dockge)**
   A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager
-  Language TypeScript | Stars 22,238 | Push 2026-01-21 | Commit 2026-01-21 | Starred 2026-02-27 | Status active
+  `TypeScript` · ⭐ 22.2K · pushed 2026-01-21 · 🟠 active
 
-- [kottster/kottster](https://github.com/kottster/kottster)
+- **[kottster/kottster](https://github.com/kottster/kottster)**
   Instant Node.js admin panel. Secure, self-hosted, and easy to set up
-  Language TypeScript | Stars 1,135 | Push 2026-01-16 | Commit 2026-01-16 | Starred 2026-02-27 | Status active
+  `TypeScript` · ⭐ 1.1K · pushed 2026-01-16 · 🟠 active
 
-- [glanceapp/glance](https://github.com/glanceapp/glance)
+- **[glanceapp/glance](https://github.com/glanceapp/glance)**
   A self-hosted dashboard that puts all your feeds in one place
-  Language Go | Stars 32,243 | Push 2025-12-10 | Commit 2025-12-10 | Starred 2026-02-27 | Status active
+  `Go` · ⭐ 32.2K · pushed 2025-12-10 · 🟠 active
 
 </details>
 
 <details>
-<summary><strong>DevOps and Security</strong> (3)</summary>
+<summary>🔐 <strong>DevOps and Security</strong> — 3 repos · ⭐ 46.9K</summary>
 
-- [aquasecurity/trivy](https://github.com/aquasecurity/trivy)
+- **[aquasecurity/trivy](https://github.com/aquasecurity/trivy)**
   Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more
-  Language Go | Stars 32,279 | Push 2026-02-26 | Commit 2026-02-26 | Starred 2026-02-27 | Status fresh this week
+  `Go` · ⭐ 32.3K · pushed 2026-02-26 · 🟢 fresh this week
 
-- [evilsocket/opensnitch](https://github.com/evilsocket/opensnitch)
+- **[evilsocket/opensnitch](https://github.com/evilsocket/opensnitch)**
   OpenSnitch is a GNU/Linux interactive application firewall inspired by Little Snitch.
-  Language Python | Stars 12,917 | Push 2026-02-25 | Commit 2026-02-25 | Starred 2026-02-27 | Status fresh this week
+  `Python` · ⭐ 12.9K · pushed 2026-02-25 · 🟢 fresh this week
 
-- [clemcer/LoggiFly](https://github.com/clemcer/LoggiFly)
+- **[clemcer/LoggiFly](https://github.com/clemcer/LoggiFly)**
   Get Alerts from your Docker Container Logs
-  Language Python | Stars 1,671 | Push 2026-02-20 | Commit 2026-02-20 | Starred 2026-02-27 | Status fresh this week
+  `Python` · ⭐ 1.7K · pushed 2026-02-20 · 🟢 fresh this week
 
 </details>
 
 <details>
-<summary><strong>Media and Content</strong> (6)</summary>
+<summary>🎬 <strong>Media and Content</strong> — 6 repos · ⭐ 67.1K</summary>
 
-- [mpv-player/mpv](https://github.com/mpv-player/mpv)
+- **[mpv-player/mpv](https://github.com/mpv-player/mpv)**
   🎥 Command line media player
-  Language C | Stars 34,223 | Push 2026-02-27 | Commit 2026-02-27 | Starred 2026-02-27 | Status fresh this week
+  `C` · ⭐ 34.2K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [nicotine-plus/nicotine-plus](https://github.com/nicotine-plus/nicotine-plus)
+- **[nicotine-plus/nicotine-plus](https://github.com/nicotine-plus/nicotine-plus)**
   Graphical client for the Soulseek peer-to-peer network
-  Language Python | Stars 2,694 | Push 2026-02-27 | Commit 2026-02-27 | Starred 2026-02-27 | Status fresh this week
+  `Python` · ⭐ 2.7K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [autobrr/qui](https://github.com/autobrr/qui)
+- **[autobrr/qui](https://github.com/autobrr/qui)**
   A fast, single-binary qBittorrent web UI: manage multiple instances, automate torrent workflows, and cross-seed across trackers.
-  Language Go | Stars 3,302 | Push 2026-02-26 | Commit 2026-02-26 | Starred 2026-02-27 | Status fresh this week
+  `Go` · ⭐ 3.3K · pushed 2026-02-26 · 🟢 fresh this week
 
-- [TypesettingTools/Aegisub](https://github.com/TypesettingTools/Aegisub)
+- **[TypesettingTools/Aegisub](https://github.com/TypesettingTools/Aegisub)**
   Cross-platform advanced subtitle editor
-  Language C++ | Stars 1,595 | Push 2026-02-26 | Commit 2026-02-24 | Starred 2026-02-27 | Status fresh this week
+  `C++` · ⭐ 1.6K · pushed 2026-02-26 · 🟢 fresh this week
 
-- [HandBrake/HandBrake](https://github.com/HandBrake/HandBrake)
+- **[HandBrake/HandBrake](https://github.com/HandBrake/HandBrake)**
   HandBrake's development repository
-  Language C | Stars 22,468 | Push 2026-02-26 | Commit 2026-02-26 | Starred 2026-02-27 | Status fresh this week
+  `C` · ⭐ 22.5K · pushed 2026-02-26 · 🟢 fresh this week
 
-- [slskd/slskd](https://github.com/slskd/slskd)
+- **[slskd/slskd](https://github.com/slskd/slskd)**
   A modern client-server application for the Soulseek file sharing network.
-  Language C# | Stars 2,824 | Push 2026-02-19 | Commit 2026-02-17 | Starred 2026-02-27 | Status fresh this month
+  `C#` · ⭐ 2.8K · pushed 2026-02-19 · 🟡 fresh this month
 
 </details>
 
 <details>
-<summary><strong>System, Desktop and Mobile</strong> (6)</summary>
+<summary>💻 <strong>System, Desktop and Mobile</strong> — 6 repos · ⭐ 274.1K</summary>
 
-- [ChrisTitusTech/winutil](https://github.com/ChrisTitusTech/winutil)
+- **[ChrisTitusTech/winutil](https://github.com/ChrisTitusTech/winutil)**
   Chris Titus Tech's Windows Utility - Install Programs, Tweaks, Fixes, and Updates
-  Language PowerShell | Stars 48,186 | Push 2026-02-25 | Commit 2026-02-25 | Starred 2026-02-27 | Status fresh this week
+  `PowerShell` · ⭐ 48.2K · pushed 2026-02-25 · 🟢 fresh this week
 
-- [massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts)
+- **[massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts)**
   Open-source Windows and Office activator featuring HWID, Ohook, TSforge, and Online KMS activation methods, along with advanced troublesh...
-  Language Batchfile | Stars 167,122 | Push 2026-02-22 | Commit 2026-02-01 | Starred 2026-02-27 | Status fresh this week
+  `Batchfile` · ⭐ 167.1K · pushed 2026-02-22 · 🟢 fresh this week
 
-- [florisboard/florisboard](https://github.com/florisboard/florisboard)
+- **[florisboard/florisboard](https://github.com/florisboard/florisboard)**
   An open-source keyboard for Android which respects your privacy. Currently in beta.
-  Language Kotlin | Stars 8,075 | Push 2026-02-19 | Commit 2026-02-17 | Starred 2026-02-27 | Status fresh this month
+  `Kotlin` · ⭐ 8.1K · pushed 2026-02-19 · 🟡 fresh this month
 
-- [ckb-next/ckb-next](https://github.com/ckb-next/ckb-next)
+- **[ckb-next/ckb-next](https://github.com/ckb-next/ckb-next)**
   RGB Driver for Linux
-  Language C++ | Stars 3,578 | Push 2026-02-04 | Commit 2025-12-23 | Starred 2026-02-27 | Status fresh this month
+  `C++` · ⭐ 3.6K · pushed 2026-02-04 · 🟡 fresh this month
 
-- [ImranR98/Obtainium](https://github.com/ImranR98/Obtainium)
+- **[ImranR98/Obtainium](https://github.com/ImranR98/Obtainium)**
   Get Android app updates straight from the source.
-  Language Dart | Stars 15,476 | Push 2026-01-31 | Commit 2026-01-31 | Starred 2026-02-27 | Status fresh this month
+  `Dart` · ⭐ 15.5K · pushed 2026-01-31 · 🟡 fresh this month
 
-- [valinet/ExplorerPatcher](https://github.com/valinet/ExplorerPatcher)
+- **[valinet/ExplorerPatcher](https://github.com/valinet/ExplorerPatcher)**
   This project aims to enhance the working environment on Windows
-  Language C | Stars 31,679 | Push 2025-11-03 | Commit 2025-11-03 | Starred 2026-02-27 | Status active
+  `C` · ⭐ 31.7K · pushed 2025-11-03 · 🟠 active
 
 </details>
 
 <details>
-<summary><strong>Developer Tools</strong> (2)</summary>
+<summary>🛠️ <strong>Developer Tools</strong> — 2 repos · ⭐ 33.4K</summary>
 
-- [mountain-loop/yaak](https://github.com/mountain-loop/yaak)
+- **[mountain-loop/yaak](https://github.com/mountain-loop/yaak)**
   The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC 🦬
-  Language TypeScript | Stars 17,944 | Push 2026-02-27 | Commit 2026-02-27 | Starred 2026-02-27 | Status fresh this week
+  `TypeScript` · ⭐ 17.9K · pushed 2026-02-27 · 🟢 fresh this week
 
-- [zauberzeug/nicegui](https://github.com/zauberzeug/nicegui)
+- **[zauberzeug/nicegui](https://github.com/zauberzeug/nicegui)**
   Create web-based user interfaces with Python. The nice way.
-  Language Python | Stars 15,429 | Push 2026-02-25 | Commit 2026-02-25 | Starred 2026-02-27 | Status fresh this week
+  `Python` · ⭐ 15.4K · pushed 2026-02-25 · 🟢 fresh this week
 
 </details>
 
-## Slower Projects (1)
+## 🔴 Slower Projects (1)
 
 <details>
-<summary><strong>Self-Hosting and Homelab</strong> (1)</summary>
+<summary>🏠 <strong>Self-Hosting and Homelab</strong> — 1 repos · ⭐ 1.2K</summary>
 
-- [foundObjects/pve-nag-buster](https://github.com/foundObjects/pve-nag-buster)
+- **[foundObjects/pve-nag-buster](https://github.com/foundObjects/pve-nag-buster)**
   Persistent license nag removal for Proxmox VE 5.x+
-  Language Shell | Stars 1,198 | Push 2023-09-08 | Commit 2021-05-05 | Starred 2026-02-27 | Status stale
+  `Shell` · ⭐ 1.2K · pushed 2023-09-08 · 🔴 stale
 
 </details>
+
+---
+
+## ℹ️ How this works
+
+This list is **auto-generated daily** via GitHub Actions.
+A Python script fetches all starred repositories using the GitHub GraphQL API,
+classifies them into groups, and commits the updated `README.md` and `data/starred-repos.json`.
+
+*Generated by [generate_awesome.py](scripts/generate_awesome.py)*

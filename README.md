@@ -28,26 +28,16 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 ## Recently Starred (last 30 days)
 
-1. **[davila7/claude-code-templates](https://github.com/davila7/claude-code-templates)** — CLI tool for configuring and monitoring Claude Code  
-   Python | ★ 21.4K | starred 2026-02-27 | fresh this week
-2. **[anomalyco/opencode](https://github.com/anomalyco/opencode)** — The open source coding agent.  
-   TypeScript | ★ 112.1K | starred 2026-02-27 | fresh this week
-3. **[KeygraphHQ/shannon](https://github.com/KeygraphHQ/shannon)** — Fully autonomous AI hacker to find actual exploits in your web apps. Shannon has achieved a...  
-   TypeScript | ★ 25.4K | starred 2026-02-27 | fresh this week
-4. **[Maciek-roboblog/Claude-Code-Usage-Monitor](https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor)** — Real-time Claude Code usage monitor with predictions and warnings  
-   Python | ★ 6.7K | starred 2026-02-27 | active
-5. **[Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI)** — The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interf...  
-   Python | ★ 104.4K | starred 2026-02-27 | fresh this week
-6. **[florisboard/florisboard](https://github.com/florisboard/florisboard)** — An open-source keyboard for Android which respects your privacy. Currently in beta.  
-   Kotlin | ★ 8.1K | starred 2026-02-27 | fresh this month
-7. **[ImranR98/Obtainium](https://github.com/ImranR98/Obtainium)** — Get Android app updates straight from the source.  
-   Dart | ★ 15.5K | starred 2026-02-27 | fresh this month
-8. **[nullclaw/nullclaw](https://github.com/nullclaw/nullclaw)** — Fastest, smallest, and fully autonomous AI assistant infrastructure written in Zig  
-   Zig | ★ 2.5K | starred 2026-02-27 | fresh this week
-9. **[autobrr/qui](https://github.com/autobrr/qui)** — A fast, single-binary qBittorrent web UI: manage multiple instances, automate torrent workfl...  
-   Go | ★ 3.3K | starred 2026-02-27 | fresh this week
-10. **[louislam/dockge](https://github.com/louislam/dockge)** — A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager  
-   TypeScript | ★ 22.2K | starred 2026-02-27 | active
+1. **[davila7/claude-code-templates](https://github.com/davila7/claude-code-templates)** — CLI tool for configuring and monitoring Claude Code
+2. **[anomalyco/opencode](https://github.com/anomalyco/opencode)** — The open source coding agent.
+3. **[KeygraphHQ/shannon](https://github.com/KeygraphHQ/shannon)** — Fully autonomous AI hacker to find actual exploits in your web apps. Shannon has achieved a...
+4. **[Maciek-roboblog/Claude-Code-Usage-Monitor](https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor)** — Real-time Claude Code usage monitor with predictions and warnings
+5. **[Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI)** — The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interf...
+6. **[florisboard/florisboard](https://github.com/florisboard/florisboard)** — An open-source keyboard for Android which respects your privacy. Currently in beta.
+7. **[ImranR98/Obtainium](https://github.com/ImranR98/Obtainium)** — Get Android app updates straight from the source.
+8. **[nullclaw/nullclaw](https://github.com/nullclaw/nullclaw)** — Fastest, smallest, and fully autonomous AI assistant infrastructure written in Zig
+9. **[autobrr/qui](https://github.com/autobrr/qui)** — A fast, single-binary qBittorrent web UI: manage multiple instances, automate torrent workfl...
+10. **[louislam/dockge](https://github.com/louislam/dockge)** — A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager
 
 ## Active Projects (43)
 

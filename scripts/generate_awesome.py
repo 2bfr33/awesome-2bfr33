@@ -461,16 +461,7 @@ def build_readme(
             name = str(repo["name_with_owner"])
             url = str(repo["url"])
             desc = sanitize_text(repo.get("description"), max_len=95)
-            starred = fmt_date(str(repo.get("starred_at") or ""))
-            stars = int(repo.get("stargazer_count") or 0)
-            lang = str(repo.get("primary_language") or "—")
-            status = freshness_label(repo, snapshot_dt)
-            lines.append(
-                f"{idx}. **[{name}]({url})** — {desc}  "
-            )
-            lines.append(
-                f"   {lang} | ★ {fmt_stars_short(stars)} | starred {starred} | {status}"
-            )
+            lines.append(f"{idx}. **[{name}]({url})** — {desc}")
     else:
         lines.append("*No recently starred repositories.*")
 

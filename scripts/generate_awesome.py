@@ -489,7 +489,7 @@ def build_readme(
             continue
         emoji = GROUP_EMOJIS.get(group_name, "📦")
         group_stars = sum(int(r.get("stargazer_count") or 0) for r in group_repos)
-        lines.append("<details>")
+        lines.append(f'<details id="{slugify(group_name)}">')
         lines.append(
             f"<summary>{emoji} <strong>{group_name}</strong> "
             f"— {len(group_repos)} repos · ⭐ {fmt_stars_short(group_stars)}</summary>"
@@ -507,7 +507,7 @@ def build_readme(
             continue
         emoji = GROUP_EMOJIS.get(group_name, "📦")
         group_stars = sum(int(r.get("stargazer_count") or 0) for r in group_repos)
-        lines.append("<details>")
+        lines.append(f'<details id="{slugify(group_name)}-slow">')
         lines.append(
             f"<summary>{emoji} <strong>{group_name}</strong> "
             f"— {len(group_repos)} repos · ⭐ {fmt_stars_short(group_stars)}</summary>"

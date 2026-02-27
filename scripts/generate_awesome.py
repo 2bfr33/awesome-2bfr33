@@ -369,9 +369,8 @@ def render_group_index(grouped: "OrderedDict[str, List[Dict[str, Any]]]") -> Lis
     lines: List[str] = []
     for group_name, repos in grouped.items():
         if repos:
-            emoji = GROUP_EMOJIS.get(group_name, "📦")
             lines.append(
-                f"- {emoji} [{group_name}](#{slugify(group_name)}) ({len(repos)})"
+                f"[{group_name}](#{slugify(group_name)}) ({len(repos)})<br>"
             )
     return lines
 
@@ -469,9 +468,8 @@ def build_readme(
     for group_name, group_repos in grouped_active.items():
         if not group_repos:
             continue
-        emoji = GROUP_EMOJIS.get(group_name, "📦")
         lines.append(
-            f'<h3 id="{slugify(group_name)}">{emoji} {group_name} '
+            f'<h3 id="{slugify(group_name)}">{group_name} '
             f'<sup>({len(group_repos)})</sup></h3>'
         )
         lines.append("")
@@ -483,9 +481,8 @@ def build_readme(
     for group_name, group_repos in grouped_slow.items():
         if not group_repos:
             continue
-        emoji = GROUP_EMOJIS.get(group_name, "📦")
         lines.append(
-            f'<h3 id="{slugify(group_name)}-slow">{emoji} {group_name} '
+            f'<h3 id="{slugify(group_name)}-slow">{group_name} '
             f'<sup>({len(group_repos)})</sup></h3>'
         )
         lines.append("")

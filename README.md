@@ -8,13 +8,13 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 ## Group Index
 
-- 📚 [Reference Lists](#reference-lists) (2)
-- 🤖 [AI and Automation](#ai-and-automation) (6)
-- 🏠 [Self-Hosting and Homelab](#self-hosting-and-homelab) (19)
-- 🔐 [DevOps and Security](#devops-and-security) (3)
-- 🎬 [Media and Content](#media-and-content) (6)
-- 💻 [System, Desktop and Mobile](#system-desktop-and-mobile) (6)
-- 🛠️ [Developer Tools](#developer-tools) (2)
+[Reference Lists](#reference-lists) (2)<br>
+[AI and Automation](#ai-and-automation) (6)<br>
+[Self-Hosting and Homelab](#self-hosting-and-homelab) (19)<br>
+[DevOps and Security](#devops-and-security) (3)<br>
+[Media and Content](#media-and-content) (6)<br>
+[System, Desktop and Mobile](#system-desktop-and-mobile) (6)<br>
+[Developer Tools](#developer-tools) (2)<br>
 
 ## Top 5 by Stars
 
@@ -41,7 +41,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 ## Active Projects (43)
 
-<h3 id="reference-lists">📚 Reference Lists <sup>(2)</sup></h3>
+<h3 id="reference-lists">Reference Lists <sup>(2)</sup></h3>
 
 - **[awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)**
   A list of Free Software network services and web applications which can be hosted on your own servers<br>
@@ -51,7 +51,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Awesome Privacy - A curated list of services and alternatives that respect your privacy because PRIVACY MATTERS.<br>
   <sub>Unknown | ★ 18.1K | pushed 2026-02-16 | fresh this month</sub>
 
-<h3 id="ai-and-automation">🤖 AI and Automation <sup>(6)</sup></h3>
+<h3 id="ai-and-automation">AI and Automation <sup>(6)</sup></h3>
 
 - **[anomalyco/opencode](https://github.com/anomalyco/opencode)**
   The open source coding agent.<br>
@@ -77,7 +77,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Real-time Claude Code usage monitor with predictions and warnings<br>
   <sub>Python | ★ 6.7K | pushed 2025-09-14 | active</sub>
 
-<h3 id="self-hosting-and-homelab">🏠 Self-Hosting and Homelab <sup>(18)</sup></h3>
+<h3 id="self-hosting-and-homelab">Self-Hosting and Homelab <sup>(18)</sup></h3>
 
 - **[community-scripts/ProxmoxVE](https://github.com/community-scripts/ProxmoxVE)**
   Proxmox VE Helper-Scripts (Community Edition)<br>
@@ -151,7 +151,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   A self-hosted dashboard that puts all your feeds in one place<br>
   <sub>Go | ★ 32.2K | pushed 2025-12-10 | active</sub>
 
-<h3 id="devops-and-security">🔐 DevOps and Security <sup>(3)</sup></h3>
+<h3 id="devops-and-security">DevOps and Security <sup>(3)</sup></h3>
 
 - **[aquasecurity/trivy](https://github.com/aquasecurity/trivy)**
   Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more<br>
@@ -165,7 +165,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Get Alerts from your Docker Container Logs<br>
   <sub>Python | ★ 1.7K | pushed 2026-02-20 | fresh this week</sub>
 
-<h3 id="media-and-content">🎬 Media and Content <sup>(6)</sup></h3>
+<h3 id="media-and-content">Media and Content <sup>(6)</sup></h3>
 
 - **[mpv-player/mpv](https://github.com/mpv-player/mpv)**
   🎥 Command line media player<br>
@@ -191,7 +191,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   A modern client-server application for the Soulseek file sharing network.<br>
   <sub>C# | ★ 2.8K | pushed 2026-02-19 | fresh this month</sub>
 
-<h3 id="system-desktop-and-mobile">💻 System, Desktop and Mobile <sup>(6)</sup></h3>
+<h3 id="system-desktop-and-mobile">System, Desktop and Mobile <sup>(6)</sup></h3>
 
 - **[ChrisTitusTech/winutil](https://github.com/ChrisTitusTech/winutil)**
   Chris Titus Tech's Windows Utility - Install Programs, Tweaks, Fixes, and Updates<br>
@@ -217,7 +217,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   This project aims to enhance the working environment on Windows<br>
   <sub>C | ★ 31.7K | pushed 2025-11-03 | active</sub>
 
-<h3 id="developer-tools">🛠️ Developer Tools <sup>(2)</sup></h3>
+<h3 id="developer-tools">Developer Tools <sup>(2)</sup></h3>
 
 - **[mountain-loop/yaak](https://github.com/mountain-loop/yaak)**
   The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC 🦬<br>
@@ -229,7 +229,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 ## Slower Projects (1)
 
-<h3 id="self-hosting-and-homelab-slow">🏠 Self-Hosting and Homelab <sup>(1)</sup></h3>
+<h3 id="self-hosting-and-homelab-slow">Self-Hosting and Homelab <sup>(1)</sup></h3>
 
 - **[foundObjects/pve-nag-buster](https://github.com/foundObjects/pve-nag-buster)**
   Persistent license nag removal for Proxmox VE 5.x+<br>

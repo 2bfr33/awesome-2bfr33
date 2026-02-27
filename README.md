@@ -51,7 +51,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 ## 🟢 Active Projects (43)
 
-<details>
+<details id="reference-lists">
 <summary>📚 <strong>Reference Lists</strong> — 2 repos · ⭐ 293.6K</summary>
 
 - **[awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)**
@@ -64,7 +64,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 </details>
 
-<details>
+<details id="ai-and-automation">
 <summary>🤖 <strong>AI and Automation</strong> — 6 repos · ⭐ 272.5K</summary>
 
 - **[anomalyco/opencode](https://github.com/anomalyco/opencode)**
@@ -93,7 +93,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 </details>
 
-<details>
+<details id="self-hosting-and-homelab">
 <summary>🏠 <strong>Self-Hosting and Homelab</strong> — 18 repos · ⭐ 429.2K</summary>
 
 - **[community-scripts/ProxmoxVE](https://github.com/community-scripts/ProxmoxVE)**
@@ -170,7 +170,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 </details>
 
-<details>
+<details id="devops-and-security">
 <summary>🔐 <strong>DevOps and Security</strong> — 3 repos · ⭐ 46.9K</summary>
 
 - **[aquasecurity/trivy](https://github.com/aquasecurity/trivy)**
@@ -187,7 +187,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 </details>
 
-<details>
+<details id="media-and-content">
 <summary>🎬 <strong>Media and Content</strong> — 6 repos · ⭐ 67.1K</summary>
 
 - **[mpv-player/mpv](https://github.com/mpv-player/mpv)**
@@ -216,7 +216,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 </details>
 
-<details>
+<details id="system-desktop-and-mobile">
 <summary>💻 <strong>System, Desktop and Mobile</strong> — 6 repos · ⭐ 274.1K</summary>
 
 - **[ChrisTitusTech/winutil](https://github.com/ChrisTitusTech/winutil)**
@@ -245,7 +245,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 </details>
 
-<details>
+<details id="developer-tools">
 <summary>🛠️ <strong>Developer Tools</strong> — 2 repos · ⭐ 33.4K</summary>
 
 - **[mountain-loop/yaak](https://github.com/mountain-loop/yaak)**
@@ -260,7 +260,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 ## 🔴 Slower Projects (1)
 
-<details>
+<details id="self-hosting-and-homelab-slow">
 <summary>🏠 <strong>Self-Hosting and Homelab</strong> — 1 repos · ⭐ 1.2K</summary>
 
 - **[foundObjects/pve-nag-buster](https://github.com/foundObjects/pve-nag-buster)**

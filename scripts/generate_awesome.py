@@ -363,15 +363,6 @@ def freshness_label(repo: Dict[str, Any], snapshot_dt: datetime) -> str:
     return "stale"
 
 
-def freshness_badge(repo: Dict[str, Any], snapshot_dt: datetime) -> str:
-    label = freshness_label(repo, snapshot_dt)
-    icons = {
-        "fresh this week": "🟢",
-        "fresh this month": "🟡",
-        "active": "🟠",
-        "stale": "🔴",
-    }
-    return f"{icons.get(label, '⚪')} {label}"
 
 
 def render_group_index(grouped: "OrderedDict[str, List[Dict[str, Any]]]") -> List[str]:
@@ -393,10 +384,12 @@ def render_repo_entry(repo: Dict[str, Any], snapshot_dt: datetime) -> List[str]:
     stars = int(repo.get("stargazer_count") or 0)
     pushed = fmt_date(str(repo.get("pushed_at") or ""))
     archived = bool(repo.get("is_archived"))
+    status = freshness_label(repo, snapshot_dt)
 
-    badge = freshness_badge(repo, snapshot_dt)
-    archived_tag = " · `archived`" if archived else ""
-    meta = f"`{language}` · ⭐ {fmt_stars_short(stars)} · pushed {pushed} · {badge}{archived_tag}"
+    parts = [language, f"★ {fmt_stars_short(stars)}", f"pushed {pushed}", status]
+    if archived:
+        parts.append("archived")
+    meta = " | ".join(parts)
 
     return [
         f"- **[{name}]({url})**",
@@ -471,12 +464,12 @@ def build_readme(
             starred = fmt_date(str(repo.get("starred_at") or ""))
             stars = int(repo.get("stargazer_count") or 0)
             lang = str(repo.get("primary_language") or "—")
-            status = freshness_badge(repo, snapshot_dt)
+            status = freshness_label(repo, snapshot_dt)
             lines.append(
                 f"{idx}. **[{name}]({url})** — {desc}  "
             )
             lines.append(
-                f"   `{lang}` · ⭐ {fmt_stars_short(stars)} · starred {starred} · {status}"
+                f"   {lang} | ★ {fmt_stars_short(stars)} | starred {starred} | {status}"
             )
     else:
         lines.append("*No recently starred repositories.*")

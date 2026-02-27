@@ -3,10 +3,12 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
-from datetime import datetime, timezone
+from collections import OrderedDict
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Iterable, List, Optional, Tuple
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -14,6 +16,121 @@ API_URL = "https://api.github.com/graphql"
 README_PATH = Path(os.getenv("OUTPUT_README", "README.md"))
 JSON_PATH = Path(os.getenv("OUTPUT_JSON", "data/starred-repos.json"))
 MAX_DESC_LEN = int(os.getenv("MAX_DESC_LEN", "140"))
+ACTIVE_DAYS = int(os.getenv("ACTIVE_DAYS", "180"))
+RECENT_STAR_DAYS = int(os.getenv("RECENT_STAR_DAYS", "30"))
+
+GROUP_RULES: List[Tuple[str, Tuple[str, ...]]] = [
+    (
+        "Reference Lists",
+        (
+            "awesome-",
+            "curated list",
+            "awesome privacy",
+            "awesome selfhosted",
+        ),
+    ),
+    (
+        "AI and Automation",
+        (
+            "llm",
+            "agent",
+            "claude",
+            "autonomous",
+            "diffusion",
+            "model",
+            "comfyui",
+            "prompt",
+            "machine learning",
+            "open source coding agent",
+        ),
+    ),
+    (
+        "Self-Hosting and Homelab",
+        (
+            "self-host",
+            "selfhost",
+            "homelab",
+            "proxmox",
+            "dockge",
+            "homepage",
+            "dashboard",
+            "linkwarden",
+            "linkding",
+            "nginx",
+            "beszel",
+            "code-server",
+            "komodo",
+            "rustdesk",
+            "doco-cd",
+            "puter",
+        ),
+    ),
+    (
+        "DevOps and Security",
+        (
+            "security",
+            "vulnerab",
+            "sbom",
+            "trivy",
+            "deploy",
+            "backup",
+            "monitor",
+            "firewall",
+            "alert",
+            "log",
+            "ci",
+            "cd",
+        ),
+    ),
+    (
+        "Media and Content",
+        (
+            "media",
+            "subtitle",
+            "player",
+            "video",
+            "torrent",
+            "soulseek",
+            "aegisub",
+            "handbrake",
+            "mpv",
+            "qbittorrent",
+        ),
+    ),
+    (
+        "System, Desktop and Mobile",
+        (
+            "windows",
+            "android",
+            "keyboard",
+            "driver",
+            "explorer",
+            "activation",
+            "winutil",
+            "obtainium",
+            "florisboard",
+            "opensnitch",
+            "remote desktop",
+        ),
+    ),
+    (
+        "Developer Tools",
+        (
+            "api",
+            "cli",
+            "editor",
+            "tool",
+            "web ui",
+            "admin panel",
+            "nicegui",
+            "client",
+            "typescript",
+            "python",
+            "go",
+            "rust",
+        ),
+    ),
+]
 
 GRAPHQL_QUERY = """
 query($after: String) {
@@ -35,6 +152,7 @@ query($after: String) {
           url
           description
           stargazerCount
+          isArchived
           primaryLanguage {
             name
           }
@@ -100,23 +218,251 @@ def github_graphql(token: str, query: str, variables: Dict[str, Any]) -> Dict[st
     return parsed["data"]
 
 
-def format_iso_date(iso_value: Optional[str]) -> str:
-    if not iso_value:
-        return "-"
+def parse_dt(value: Optional[str]) -> Optional[datetime]:
+    if not value:
+        return None
     try:
-        dt = datetime.fromisoformat(iso_value.replace("Z", "+00:00"))
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
     except ValueError:
-        return iso_value
-    return dt.strftime("%Y-%m-%d")
+        return None
 
 
-def sanitize_md(text: Optional[str], max_len: int = MAX_DESC_LEN) -> str:
+def fmt_date(value: Optional[str]) -> str:
+    dt = parse_dt(value)
+    return dt.strftime("%Y-%m-%d") if dt else "-"
+
+
+def fmt_datetime_utc(value: Optional[str]) -> str:
+    dt = parse_dt(value)
+    if not dt:
+        dt = datetime.now(timezone.utc)
+    return dt.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
+
+def fmt_stars(value: int) -> str:
+    return f"{value:,}"
+
+
+def sanitize_text(text: Optional[str], max_len: int = MAX_DESC_LEN) -> str:
     if not text:
-        return "-"
-    cleaned = " ".join(text.split()).replace("|", "\\|")
+        return "No description."
+    cleaned = re.sub(r"\s+", " ", text).strip().replace("|", "\\|")
     if len(cleaned) <= max_len:
         return cleaned
     return cleaned[: max_len - 3].rstrip() + "..."
+
+
+def slugify(title: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+    return slug or "section"
+
+
+def classify_repo(repo: Dict[str, Any]) -> str:
+    name = str(repo.get("name_with_owner") or "").lower()
+    description = str(repo.get("description") or "").lower()
+    language = str(repo.get("primary_language") or "")
+    full_text = f"{name} {description} {language.lower()}"
+
+    if "/awesome-" in name or name.startswith("awesome-") or "curated list" in description:
+        return "Reference Lists"
+
+    for group, keywords in GROUP_RULES:
+        if group == "Reference Lists":
+            continue
+        if any(keyword in full_text for keyword in keywords):
+            return group
+
+    if language in {"TypeScript", "JavaScript", "Python", "Go", "Rust", "Zig"}:
+        return "Developer Tools"
+    if language in {"C", "C++", "C#", "PowerShell", "Shell", "Batchfile", "Kotlin", "Dart"}:
+        return "System, Desktop and Mobile"
+    return "Other"
+
+
+def sort_active_key(repo: Dict[str, Any]) -> Tuple[datetime, int]:
+    pushed = parse_dt(str(repo.get("pushed_at") or ""))
+    if pushed is None:
+        pushed = datetime(1970, 1, 1, tzinfo=timezone.utc)
+    stars = int(repo.get("stargazer_count") or 0)
+    return pushed, stars
+
+
+def sort_slow_key(repo: Dict[str, Any]) -> Tuple[int, datetime]:
+    stars = int(repo.get("stargazer_count") or 0)
+    starred_at = parse_dt(str(repo.get("starred_at") or ""))
+    if starred_at is None:
+        starred_at = datetime(1970, 1, 1, tzinfo=timezone.utc)
+    return stars, starred_at
+
+
+def split_by_activity(
+    repos: Iterable[Dict[str, Any]], snapshot_dt: datetime
+) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    threshold = snapshot_dt - timedelta(days=ACTIVE_DAYS)
+    active: List[Dict[str, Any]] = []
+    slow: List[Dict[str, Any]] = []
+
+    for repo in repos:
+        pushed = parse_dt(str(repo.get("pushed_at") or ""))
+        if pushed and pushed >= threshold:
+            active.append(repo)
+        else:
+            slow.append(repo)
+    return active, slow
+
+
+def group_repositories(
+    repos: List[Dict[str, Any]], mode: str
+) -> "OrderedDict[str, List[Dict[str, Any]]]":
+    grouped: "OrderedDict[str, List[Dict[str, Any]]]" = OrderedDict()
+    for group_name, _ in GROUP_RULES:
+        grouped[group_name] = []
+    grouped["Other"] = []
+
+    if mode == "slow":
+        ordered = sorted(repos, key=sort_slow_key, reverse=True)
+    else:
+        ordered = sorted(repos, key=sort_active_key, reverse=True)
+
+    for repo in ordered:
+        grouped[classify_repo(repo)].append(repo)
+
+    return grouped
+
+
+def freshness_label(repo: Dict[str, Any], snapshot_dt: datetime) -> str:
+    pushed = parse_dt(str(repo.get("pushed_at") or ""))
+    if not pushed:
+        return "stale"
+    days = (snapshot_dt.date() - pushed.date()).days
+    if days <= 7:
+        return "fresh this week"
+    if days <= 30:
+        return "fresh this month"
+    if days <= ACTIVE_DAYS:
+        return "active"
+    return "stale"
+
+
+def render_group_index(grouped: "OrderedDict[str, List[Dict[str, Any]]]") -> List[str]:
+    lines: List[str] = []
+    for group_name, repos in grouped.items():
+        if repos:
+            lines.append(f"- [{group_name} ({len(repos)})](#{slugify(group_name)})")
+    return lines
+
+
+def render_repo_entry(
+    repo: Dict[str, Any], snapshot_dt: datetime, include_commit: bool
+) -> List[str]:
+    name = str(repo["name_with_owner"])
+    url = str(repo["url"])
+    description = sanitize_text(repo.get("description"))
+    language = str(repo.get("primary_language") or "Unknown")
+    stars = fmt_stars(int(repo.get("stargazer_count") or 0))
+    pushed = fmt_date(str(repo.get("pushed_at") or ""))
+    commit = fmt_date(str(repo.get("last_commit_at") or ""))
+    starred = fmt_date(str(repo.get("starred_at") or ""))
+    archived = bool(repo.get("is_archived"))
+
+    lines = [
+        f"- [{name}]({url})",
+        f"  {description}",
+        f"  - **Language:** `{language}`",
+        f"  - **Stars:** `{stars}`",
+        f"  - **Push:** `{pushed}`",
+    ]
+    if include_commit:
+        lines.append(f"  - **Commit:** `{commit}`")
+    lines.append(f"  - **Starred:** `{starred}`")
+    lines.append(f"  - **Status:** `{freshness_label(repo, snapshot_dt)}`")
+    if archived:
+        lines.append("  - **State:** `archived`")
+
+    return lines
+
+
+def build_readme(
+    login: str, repositories: List[Dict[str, Any]], generated_at_iso: str
+) -> str:
+    snapshot_dt = parse_dt(generated_at_iso) or datetime.now(timezone.utc)
+    active, slow = split_by_activity(repositories, snapshot_dt)
+    grouped_all = group_repositories(repositories, mode="active")
+    grouped_active = group_repositories(active, mode="active")
+    grouped_slow = group_repositories(slow, mode="slow")
+
+    recent_threshold = snapshot_dt - timedelta(days=RECENT_STAR_DAYS)
+    recently_starred = [
+        repo
+        for repo in sorted(
+            repositories,
+            key=lambda r: parse_dt(str(r.get("starred_at") or ""))
+            or datetime(1970, 1, 1, tzinfo=timezone.utc),
+            reverse=True,
+        )
+        if (parse_dt(str(repo.get("starred_at") or "")) or datetime(1970, 1, 1, tzinfo=timezone.utc))
+        >= recent_threshold
+    ][:10]
+
+    lines: List[str] = [
+        "# Awesome Starred Projects",
+        "",
+        f"Auto-generated list of GitHub stars for **{login}**.",
+        "",
+        "## Snapshot",
+        "",
+        f"- Last updated: `{fmt_datetime_utc(generated_at_iso)}`",
+        f"- Total repositories: **{len(repositories)}**",
+        f"- Active projects (push <= {ACTIVE_DAYS} days): **{len(active)}**",
+        f"- Slower projects: **{len(slow)}**",
+        "- Auto-updated daily.",
+        "",
+        "## Group Index",
+        "",
+    ]
+    lines.extend(render_group_index(grouped_all))
+
+    lines.extend(["", f"## Recently Starred (last {RECENT_STAR_DAYS} days)", ""])
+    if recently_starred:
+        for idx, repo in enumerate(recently_starred, start=1):
+            name = str(repo["name_with_owner"])
+            url = str(repo["url"])
+            desc = sanitize_text(repo.get("description"), max_len=95)
+            starred = fmt_date(str(repo.get("starred_at") or ""))
+            stars = fmt_stars(int(repo.get("stargazer_count") or 0))
+            lines.append(
+                f"{idx}. [{name}]({url}) - {desc} (`Starred {starred}` | `Stars {stars}`)"
+            )
+    else:
+        lines.append("- No recently starred repositories.")
+
+    lines.extend(["", f"## Active Projects ({len(active)})", ""])
+    for group_name, group_repos in grouped_active.items():
+        if not group_repos:
+            continue
+        lines.append("<details>")
+        lines.append(f"<summary><strong>{group_name}</strong> ({len(group_repos)})</summary>")
+        lines.append("")
+        for repo in group_repos:
+            lines.extend(render_repo_entry(repo, snapshot_dt, include_commit=False))
+            lines.append("")
+        lines.append("</details>")
+        lines.append("")
+
+    lines.extend([f"## Slower Projects ({len(slow)})", ""])
+    for group_name, group_repos in grouped_slow.items():
+        if not group_repos:
+            continue
+        lines.append("<details>")
+        lines.append(f"<summary><strong>{group_name}</strong> ({len(group_repos)})</summary>")
+        lines.append("")
+        for repo in group_repos:
+            lines.extend(render_repo_entry(repo, snapshot_dt, include_commit=True))
+            lines.append("")
+        lines.append("</details>")
+        lines.append("")
+
+    return "\n".join(lines).strip() + "\n"
 
 
 def fetch_starred_repositories(token: str) -> Dict[str, Any]:
@@ -148,15 +494,14 @@ def fetch_starred_repositories(token: str) -> Dict[str, Any]:
                     "url": node["url"],
                     "description": node.get("description"),
                     "stargazer_count": node.get("stargazerCount", 0),
-                    "primary_language": (
-                        node.get("primaryLanguage") or {}
-                    ).get("name"),
+                    "primary_language": (node.get("primaryLanguage") or {}).get("name"),
                     "pushed_at": node.get("pushedAt"),
                     "updated_at": node.get("updatedAt"),
                     "starred_at": edge.get("starredAt"),
                     "default_branch": default_branch.get("name"),
                     "last_commit_at": last_commit,
                     "last_commit_sha": last_commit_sha,
+                    "is_archived": node.get("isArchived", False),
                 }
             )
 
@@ -171,59 +516,24 @@ def fetch_starred_repositories(token: str) -> Dict[str, Any]:
     return {"login": login, "repositories": all_repos}
 
 
-def build_readme(login: str, repositories: List[Dict[str, Any]]) -> str:
-    generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    lines: List[str] = [
-        "# Awesome Starred Projects",
-        "",
-        f"Auto-generated list of GitHub stars for **{login}**.",
-        "",
-        f"Last updated: `{generated_at}`",
-        f"Total repositories: **{len(repositories)}**",
-        "",
-        "## Setup",
-        "",
-        "1. Create a GitHub token and add it to repository secret `GH_STAR_PAT`.",
-        "2. Run workflow `Update Awesome List` manually, or wait for the daily schedule.",
-        "3. The workflow regenerates this README and `data/starred-repos.json`.",
-        "",
-        "## Starred Repositories",
-        "",
-        "| # | Repository | Description | Language | Stars | Last push | Last commit | Starred at |",
-        "|---:|---|---|---|---:|---|---|---|",
-    ]
-
-    for idx, repo in enumerate(repositories, start=1):
-        name = repo["name_with_owner"]
-        url = repo["url"]
-        description = sanitize_md(repo.get("description"))
-        language = sanitize_md(repo.get("primary_language"), max_len=40)
-        stars = repo.get("stargazer_count", 0)
-        pushed = format_iso_date(repo.get("pushed_at"))
-        last_commit = format_iso_date(repo.get("last_commit_at"))
-        starred_at = format_iso_date(repo.get("starred_at"))
-        lines.append(
-            f"| {idx} | [{name}]({url}) | {description} | {language} | {stars} | {pushed} | {last_commit} | {starred_at} |"
-        )
-
-    lines.append("")
-    return "\n".join(lines)
-
-
 def write_outputs(login: str, repositories: List[Dict[str, Any]]) -> None:
     README_PATH.parent.mkdir(parents=True, exist_ok=True)
     JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    readme_content = build_readme(login, repositories)
+    generated_at_iso = datetime.now(timezone.utc).isoformat()
+    readme_content = build_readme(login, repositories, generated_at_iso)
     README_PATH.write_text(readme_content, encoding="utf-8")
 
     payload = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": generated_at_iso,
         "login": login,
         "count": len(repositories),
         "repositories": repositories,
     }
-    JSON_PATH.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    JSON_PATH.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
 
 
 def main() -> int:

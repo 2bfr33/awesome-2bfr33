@@ -260,22 +260,20 @@ def render_repo_entry(
     commit = fmt_date(str(repo.get("last_commit_at") or ""))
     starred = fmt_date(str(repo.get("starred_at") or ""))
 
-    meta_parts = [
-        f"`{language}`",
-        f"`Stars {stars}`",
-        f"`Push {pushed}`",
-    ]
-    if include_commit:
-        meta_parts.append(f"`Commit {commit}`")
-    meta_parts.append(f"`Starred {starred}`")
-    if include_freshness:
-        meta_parts.append(f"`{freshness_label(repo, snapshot_dt)}`")
-
-    return [
+    lines = [
         f"- [{name}]({url})",
         f"  {description}",
-        f"  {' | '.join(meta_parts)}",
+        f"  - **Language:** `{language}`",
+        f"  - **Stars:** `{stars}`",
+        f"  - **Push:** `{pushed}`",
     ]
+    if include_commit:
+        lines.append(f"  - **Commit:** `{commit}`")
+    lines.append(f"  - **Starred:** `{starred}`")
+    if include_freshness:
+        lines.append(f"  - **Status:** `{freshness_label(repo, snapshot_dt)}`")
+
+    return lines
 
 
 def render_group_index(grouped: "OrderedDict[str, List[Dict[str, object]]]") -> List[str]:
@@ -289,11 +287,13 @@ def render_group_index(grouped: "OrderedDict[str, List[Dict[str, object]]]") -> 
 
 def render_stats_block(generated_at: str, total: int, active: int, slow: int) -> List[str]:
     return [
-        f"Last updated: `{fmt_datetime_utc(generated_at)}`",
-        f"Total repositories: **{total}**",
-        f"Active projects (push <= {ACTIVE_DAYS} days): **{active}**",
-        f"Slower projects: **{slow}**",
-        "Auto-updated daily.",
+        "## Snapshot",
+        "",
+        f"- Last updated: `{fmt_datetime_utc(generated_at)}`",
+        f"- Total repositories: **{total}**",
+        f"- Active projects (push <= {ACTIVE_DAYS} days): **{active}**",
+        f"- Slower projects: **{slow}**",
+        "- Auto-updated daily.",
     ]
 
 
@@ -437,17 +437,6 @@ def build_variant_b(login: str, generated_at: str, repos: List[Dict[str, object]
             lines.append("")
         lines.append("</details>")
         lines.append("")
-
-    lines.extend(
-        [
-            "## Optional Add-ons",
-            "",
-            "- Add a manual `Pinned Picks` section (3-8 projects) to keep the list personal.",
-            "- Add short personal notes per project (`why it matters`, `what to try first`).",
-            "- Add tag badges (`infra`, `ai`, `security`, `media`) for faster scanning.",
-            "- Add archive markers and hide archived repos by default.",
-        ]
-    )
 
     return "\n".join(lines).strip() + "\n"
 

@@ -393,8 +393,8 @@ def render_repo_entry(repo: Dict[str, Any], snapshot_dt: datetime) -> List[str]:
 
     return [
         f"- **[{name}]({url})**",
-        f"  {description}",
-        f"  {meta}",
+        f"  {description}<br>",
+        f"  <sub>{meta}</sub>",
     ]
 
 

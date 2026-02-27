@@ -379,10 +379,8 @@ def render_group_index(grouped: "OrderedDict[str, List[Dict[str, Any]]]") -> Lis
     for group_name, repos in grouped.items():
         if repos:
             emoji = GROUP_EMOJIS.get(group_name, "📦")
-            total_stars = sum(int(r.get("stargazer_count") or 0) for r in repos)
             lines.append(
-                f"- {emoji} [{group_name}](#{slugify(group_name)}) "
-                f"— {len(repos)} repos · ⭐ {fmt_stars_short(total_stars)}"
+                f"- {emoji} [{group_name}](#{slugify(group_name)}) ({len(repos)})"
             )
     return lines
 
@@ -439,7 +437,7 @@ def build_readme(
     badge_update = "![Auto-update](https://img.shields.io/badge/auto--update-daily-lightgrey?style=flat-square)"
 
     lines: List[str] = [
-        "# ⭐ Awesome Starred Projects",
+        "# Awesome Starred Projects",
         "",
         f"Auto-generated list of GitHub stars for **{login}**.",
         "",
@@ -454,7 +452,7 @@ def build_readme(
 
     # Top 5 by stars
     top5 = sorted(repositories, key=lambda r: int(r.get("stargazer_count") or 0), reverse=True)[:5]
-    lines.extend(["", "## 🏆 Top 5 by Stars", ""])
+    lines.extend(["", "## Top 5 by Stars", ""])
     lines.append("| # | Repository | Stars | Language |")
     lines.append("|---|-----------|-------|----------|")
     for i, repo in enumerate(top5, 1):
@@ -464,7 +462,7 @@ def build_readme(
         lang = str(repo.get("primary_language") or "—")
         lines.append(f"| {i} | [{name}]({url}) | ⭐ {fmt_stars_short(stars)} | `{lang}` |")
 
-    lines.extend(["", f"## 🆕 Recently Starred (last {RECENT_STAR_DAYS} days)", ""])
+    lines.extend(["", f"## Recently Starred (last {RECENT_STAR_DAYS} days)", ""])
     if recently_starred:
         for idx, repo in enumerate(recently_starred, start=1):
             name = str(repo["name_with_owner"])
@@ -483,30 +481,28 @@ def build_readme(
     else:
         lines.append("*No recently starred repositories.*")
 
-    lines.extend(["", f"## 🟢 Active Projects ({active_count})", ""])
+    lines.extend(["", f"## Active Projects ({active_count})", ""])
     for group_name, group_repos in grouped_active.items():
         if not group_repos:
             continue
         emoji = GROUP_EMOJIS.get(group_name, "📦")
-        group_stars = sum(int(r.get("stargazer_count") or 0) for r in group_repos)
         lines.append(
             f'<h3 id="{slugify(group_name)}">{emoji} {group_name} '
-            f'<sup>{len(group_repos)} repos · ⭐ {fmt_stars_short(group_stars)}</sup></h3>'
+            f'<sup>({len(group_repos)})</sup></h3>'
         )
         lines.append("")
         for repo in group_repos:
             lines.extend(render_repo_entry(repo, snapshot_dt))
             lines.append("")
 
-    lines.extend([f"## 🔴 Slower Projects ({slow_count})", ""])
+    lines.extend([f"## Slower Projects ({slow_count})", ""])
     for group_name, group_repos in grouped_slow.items():
         if not group_repos:
             continue
         emoji = GROUP_EMOJIS.get(group_name, "📦")
-        group_stars = sum(int(r.get("stargazer_count") or 0) for r in group_repos)
         lines.append(
             f'<h3 id="{slugify(group_name)}-slow">{emoji} {group_name} '
-            f'<sup>{len(group_repos)} repos · ⭐ {fmt_stars_short(group_stars)}</sup></h3>'
+            f'<sup>({len(group_repos)})</sup></h3>'
         )
         lines.append("")
         for repo in group_repos:
@@ -516,7 +512,7 @@ def build_readme(
     lines.extend([
         "---",
         "",
-        "## ℹ️ How this works",
+        "## How this works",
         "",
         "This list is **auto-generated daily** via GitHub Actions.",
         "A Python script fetches all starred repositories using the GitHub GraphQL API,",

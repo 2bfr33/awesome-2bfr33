@@ -1,4 +1,4 @@
-# ⭐ Awesome Starred Projects
+# Awesome Starred Projects
 
 Auto-generated list of GitHub stars for **2bfr33**.
 
@@ -8,15 +8,15 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 ## Group Index
 
-- 📚 [Reference Lists](#reference-lists) — 2 repos · ⭐ 293.6K
-- 🤖 [AI and Automation](#ai-and-automation) — 6 repos · ⭐ 272.5K
-- 🏠 [Self-Hosting and Homelab](#self-hosting-and-homelab) — 19 repos · ⭐ 430.4K
-- 🔐 [DevOps and Security](#devops-and-security) — 3 repos · ⭐ 46.9K
-- 🎬 [Media and Content](#media-and-content) — 6 repos · ⭐ 67.1K
-- 💻 [System, Desktop and Mobile](#system-desktop-and-mobile) — 6 repos · ⭐ 274.1K
-- 🛠️ [Developer Tools](#developer-tools) — 2 repos · ⭐ 33.4K
+- 📚 [Reference Lists](#reference-lists) (2)
+- 🤖 [AI and Automation](#ai-and-automation) (6)
+- 🏠 [Self-Hosting and Homelab](#self-hosting-and-homelab) (19)
+- 🔐 [DevOps and Security](#devops-and-security) (3)
+- 🎬 [Media and Content](#media-and-content) (6)
+- 💻 [System, Desktop and Mobile](#system-desktop-and-mobile) (6)
+- 🛠️ [Developer Tools](#developer-tools) (2)
 
-## 🏆 Top 5 by Stars
+## Top 5 by Stars
 
 | # | Repository | Stars | Language |
 |---|-----------|-------|----------|
@@ -26,7 +26,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 | 4 | [rustdesk/rustdesk](https://github.com/rustdesk/rustdesk) | ⭐ 108.2K | `Rust` |
 | 5 | [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI) | ⭐ 104.4K | `Python` |
 
-## 🆕 Recently Starred (last 30 days)
+## Recently Starred (last 30 days)
 
 1. **[davila7/claude-code-templates](https://github.com/davila7/claude-code-templates)** — CLI tool for configuring and monitoring Claude Code  
    `Python` · ⭐ 21.4K · starred 2026-02-27 · 🟢 fresh this week
@@ -49,9 +49,9 @@ Auto-generated list of GitHub stars for **2bfr33**.
 10. **[louislam/dockge](https://github.com/louislam/dockge)** — A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager  
    `TypeScript` · ⭐ 22.2K · starred 2026-02-27 · 🟠 active
 
-## 🟢 Active Projects (43)
+## Active Projects (43)
 
-<h3 id="reference-lists">📚 Reference Lists <sup>2 repos · ⭐ 293.6K</sup></h3>
+<h3 id="reference-lists">📚 Reference Lists <sup>(2)</sup></h3>
 
 - **[awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)**
   A list of Free Software network services and web applications which can be hosted on your own servers
@@ -61,7 +61,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Awesome Privacy - A curated list of services and alternatives that respect your privacy because PRIVACY MATTERS.
   `Unknown` · ⭐ 18.1K · pushed 2026-02-16 · 🟡 fresh this month
 
-<h3 id="ai-and-automation">🤖 AI and Automation <sup>6 repos · ⭐ 272.5K</sup></h3>
+<h3 id="ai-and-automation">🤖 AI and Automation <sup>(6)</sup></h3>
 
 - **[anomalyco/opencode](https://github.com/anomalyco/opencode)**
   The open source coding agent.
@@ -87,7 +87,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Real-time Claude Code usage monitor with predictions and warnings
   `Python` · ⭐ 6.7K · pushed 2025-09-14 · 🟠 active
 
-<h3 id="self-hosting-and-homelab">🏠 Self-Hosting and Homelab <sup>18 repos · ⭐ 429.2K</sup></h3>
+<h3 id="self-hosting-and-homelab">🏠 Self-Hosting and Homelab <sup>(18)</sup></h3>
 
 - **[community-scripts/ProxmoxVE](https://github.com/community-scripts/ProxmoxVE)**
   Proxmox VE Helper-Scripts (Community Edition)
@@ -161,7 +161,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   A self-hosted dashboard that puts all your feeds in one place
   `Go` · ⭐ 32.2K · pushed 2025-12-10 · 🟠 active
 
-<h3 id="devops-and-security">🔐 DevOps and Security <sup>3 repos · ⭐ 46.9K</sup></h3>
+<h3 id="devops-and-security">🔐 DevOps and Security <sup>(3)</sup></h3>
 
 - **[aquasecurity/trivy](https://github.com/aquasecurity/trivy)**
   Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more
@@ -175,7 +175,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Get Alerts from your Docker Container Logs
   `Python` · ⭐ 1.7K · pushed 2026-02-20 · 🟢 fresh this week
 
-<h3 id="media-and-content">🎬 Media and Content <sup>6 repos · ⭐ 67.1K</sup></h3>
+<h3 id="media-and-content">🎬 Media and Content <sup>(6)</sup></h3>
 
 - **[mpv-player/mpv](https://github.com/mpv-player/mpv)**
   🎥 Command line media player
@@ -201,7 +201,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   A modern client-server application for the Soulseek file sharing network.
   `C#` · ⭐ 2.8K · pushed 2026-02-19 · 🟡 fresh this month
 
-<h3 id="system-desktop-and-mobile">💻 System, Desktop and Mobile <sup>6 repos · ⭐ 274.1K</sup></h3>
+<h3 id="system-desktop-and-mobile">💻 System, Desktop and Mobile <sup>(6)</sup></h3>
 
 - **[ChrisTitusTech/winutil](https://github.com/ChrisTitusTech/winutil)**
   Chris Titus Tech's Windows Utility - Install Programs, Tweaks, Fixes, and Updates
@@ -227,7 +227,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   This project aims to enhance the working environment on Windows
   `C` · ⭐ 31.7K · pushed 2025-11-03 · 🟠 active
 
-<h3 id="developer-tools">🛠️ Developer Tools <sup>2 repos · ⭐ 33.4K</sup></h3>
+<h3 id="developer-tools">🛠️ Developer Tools <sup>(2)</sup></h3>
 
 - **[mountain-loop/yaak](https://github.com/mountain-loop/yaak)**
   The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC 🦬
@@ -237,9 +237,9 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Create web-based user interfaces with Python. The nice way.
   `Python` · ⭐ 15.4K · pushed 2026-02-25 · 🟢 fresh this week
 
-## 🔴 Slower Projects (1)
+## Slower Projects (1)
 
-<h3 id="self-hosting-and-homelab-slow">🏠 Self-Hosting and Homelab <sup>1 repos · ⭐ 1.2K</sup></h3>
+<h3 id="self-hosting-and-homelab-slow">🏠 Self-Hosting and Homelab <sup>(1)</sup></h3>
 
 - **[foundObjects/pve-nag-buster](https://github.com/foundObjects/pve-nag-buster)**
   Persistent license nag removal for Proxmox VE 5.x+
@@ -247,7 +247,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 ---
 
-## ℹ️ How this works
+## How this works
 
 This list is **auto-generated daily** via GitHub Actions.
 A Python script fetches all starred repositories using the GitHub GraphQL API,

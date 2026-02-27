@@ -352,9 +352,7 @@ def render_group_index(grouped: "OrderedDict[str, List[Dict[str, Any]]]") -> Lis
     return lines
 
 
-def render_repo_entry(
-    repo: Dict[str, Any], snapshot_dt: datetime, include_commit: bool
-) -> List[str]:
+def render_repo_entry(repo: Dict[str, Any], snapshot_dt: datetime) -> List[str]:
     name = str(repo["name_with_owner"])
     url = str(repo["url"])
     description = sanitize_text(repo.get("description"))
@@ -365,21 +363,22 @@ def render_repo_entry(
     starred = fmt_date(str(repo.get("starred_at") or ""))
     archived = bool(repo.get("is_archived"))
 
-    lines = [
+    metrics = [
+        f"Language {language}",
+        f"Stars {stars}",
+        f"Push {pushed}",
+        f"Commit {commit}",
+        f"Starred {starred}",
+        f"Status {freshness_label(repo, snapshot_dt)}",
+    ]
+    if archived:
+        metrics.append("State archived")
+
+    return [
         f"- [{name}]({url})",
         f"  {description}",
-        f"  - **Language:** `{language}`",
-        f"  - **Stars:** `{stars}`",
-        f"  - **Push:** `{pushed}`",
+        f"  {' | '.join(metrics)}",
     ]
-    if include_commit:
-        lines.append(f"  - **Commit:** `{commit}`")
-    lines.append(f"  - **Starred:** `{starred}`")
-    lines.append(f"  - **Status:** `{freshness_label(repo, snapshot_dt)}`")
-    if archived:
-        lines.append("  - **State:** `archived`")
-
-    return lines
 
 
 def build_readme(
@@ -409,13 +408,8 @@ def build_readme(
         "",
         f"Auto-generated list of GitHub stars for **{login}**.",
         "",
-        "## Snapshot",
-        "",
-        f"- Last updated: `{fmt_datetime_utc(generated_at_iso)}`",
-        f"- Total repositories: **{len(repositories)}**",
-        f"- Active projects (push <= {ACTIVE_DAYS} days): **{len(active)}**",
-        f"- Slower projects: **{len(slow)}**",
-        "- Auto-updated daily.",
+        f"Last snapshot: {fmt_datetime_utc(generated_at_iso)}",
+        f"Total {len(repositories)} | Active {len(active)} | Slower {len(slow)} | Daily auto-update",
         "",
         "## Group Index",
         "",
@@ -444,7 +438,7 @@ def build_readme(
         lines.append(f"<summary><strong>{group_name}</strong> ({len(group_repos)})</summary>")
         lines.append("")
         for repo in group_repos:
-            lines.extend(render_repo_entry(repo, snapshot_dt, include_commit=False))
+            lines.extend(render_repo_entry(repo, snapshot_dt))
             lines.append("")
         lines.append("</details>")
         lines.append("")
@@ -457,7 +451,7 @@ def build_readme(
         lines.append(f"<summary><strong>{group_name}</strong> ({len(group_repos)})</summary>")
         lines.append("")
         for repo in group_repos:
-            lines.extend(render_repo_entry(repo, snapshot_dt, include_commit=True))
+            lines.extend(render_repo_entry(repo, snapshot_dt))
             lines.append("")
         lines.append("</details>")
         lines.append("")

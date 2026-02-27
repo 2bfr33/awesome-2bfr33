@@ -1,0 +1,40 @@
+name: Update Awesome List
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "18 4 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-awesome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate awesome list
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_STAR_PAT }}
+        run: |
+          python scripts/generate_awesome.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet README.md data/starred-repos.json; then
+            echo "No changes detected."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md data/starred-repos.json
+          git commit -m "chore: update awesome starred list"
+          git push

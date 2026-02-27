@@ -51,8 +51,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 ## 🟢 Active Projects (43)
 
-<details id="reference-lists">
-<summary>📚 <strong>Reference Lists</strong> — 2 repos · ⭐ 293.6K</summary>
+<h3 id="reference-lists">📚 Reference Lists <sup>2 repos · ⭐ 293.6K</sup></h3>
 
 - **[awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)**
   A list of Free Software network services and web applications which can be hosted on your own servers
@@ -62,10 +61,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Awesome Privacy - A curated list of services and alternatives that respect your privacy because PRIVACY MATTERS.
   `Unknown` · ⭐ 18.1K · pushed 2026-02-16 · 🟡 fresh this month
 
-</details>
-
-<details id="ai-and-automation">
-<summary>🤖 <strong>AI and Automation</strong> — 6 repos · ⭐ 272.5K</summary>
+<h3 id="ai-and-automation">🤖 AI and Automation <sup>6 repos · ⭐ 272.5K</sup></h3>
 
 - **[anomalyco/opencode](https://github.com/anomalyco/opencode)**
   The open source coding agent.
@@ -91,10 +87,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Real-time Claude Code usage monitor with predictions and warnings
   `Python` · ⭐ 6.7K · pushed 2025-09-14 · 🟠 active
 
-</details>
-
-<details id="self-hosting-and-homelab">
-<summary>🏠 <strong>Self-Hosting and Homelab</strong> — 18 repos · ⭐ 429.2K</summary>
+<h3 id="self-hosting-and-homelab">🏠 Self-Hosting and Homelab <sup>18 repos · ⭐ 429.2K</sup></h3>
 
 - **[community-scripts/ProxmoxVE](https://github.com/community-scripts/ProxmoxVE)**
   Proxmox VE Helper-Scripts (Community Edition)
@@ -168,10 +161,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   A self-hosted dashboard that puts all your feeds in one place
   `Go` · ⭐ 32.2K · pushed 2025-12-10 · 🟠 active
 
-</details>
-
-<details id="devops-and-security">
-<summary>🔐 <strong>DevOps and Security</strong> — 3 repos · ⭐ 46.9K</summary>
+<h3 id="devops-and-security">🔐 DevOps and Security <sup>3 repos · ⭐ 46.9K</sup></h3>
 
 - **[aquasecurity/trivy](https://github.com/aquasecurity/trivy)**
   Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more
@@ -185,10 +175,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Get Alerts from your Docker Container Logs
   `Python` · ⭐ 1.7K · pushed 2026-02-20 · 🟢 fresh this week
 
-</details>
-
-<details id="media-and-content">
-<summary>🎬 <strong>Media and Content</strong> — 6 repos · ⭐ 67.1K</summary>
+<h3 id="media-and-content">🎬 Media and Content <sup>6 repos · ⭐ 67.1K</sup></h3>
 
 - **[mpv-player/mpv](https://github.com/mpv-player/mpv)**
   🎥 Command line media player
@@ -214,10 +201,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   A modern client-server application for the Soulseek file sharing network.
   `C#` · ⭐ 2.8K · pushed 2026-02-19 · 🟡 fresh this month
 
-</details>
-
-<details id="system-desktop-and-mobile">
-<summary>💻 <strong>System, Desktop and Mobile</strong> — 6 repos · ⭐ 274.1K</summary>
+<h3 id="system-desktop-and-mobile">💻 System, Desktop and Mobile <sup>6 repos · ⭐ 274.1K</sup></h3>
 
 - **[ChrisTitusTech/winutil](https://github.com/ChrisTitusTech/winutil)**
   Chris Titus Tech's Windows Utility - Install Programs, Tweaks, Fixes, and Updates
@@ -243,10 +227,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
   This project aims to enhance the working environment on Windows
   `C` · ⭐ 31.7K · pushed 2025-11-03 · 🟠 active
 
-</details>
-
-<details id="developer-tools">
-<summary>🛠️ <strong>Developer Tools</strong> — 2 repos · ⭐ 33.4K</summary>
+<h3 id="developer-tools">🛠️ Developer Tools <sup>2 repos · ⭐ 33.4K</sup></h3>
 
 - **[mountain-loop/yaak](https://github.com/mountain-loop/yaak)**
   The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC 🦬
@@ -256,18 +237,13 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Create web-based user interfaces with Python. The nice way.
   `Python` · ⭐ 15.4K · pushed 2026-02-25 · 🟢 fresh this week
 
-</details>
-
 ## 🔴 Slower Projects (1)
 
-<details id="self-hosting-and-homelab-slow">
-<summary>🏠 <strong>Self-Hosting and Homelab</strong> — 1 repos · ⭐ 1.2K</summary>
+<h3 id="self-hosting-and-homelab-slow">🏠 Self-Hosting and Homelab <sup>1 repos · ⭐ 1.2K</sup></h3>
 
 - **[foundObjects/pve-nag-buster](https://github.com/foundObjects/pve-nag-buster)**
   Persistent license nag removal for Proxmox VE 5.x+
   `Shell` · ⭐ 1.2K · pushed 2023-09-08 · 🔴 stale
-
-</details>
 
 ---
 

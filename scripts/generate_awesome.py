@@ -5,6 +5,7 @@ import json
 import os
 import re
 import sys
+import time
 from collections import OrderedDict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -13,6 +14,10 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 API_URL = "https://api.github.com/graphql"
+API_MAX_ATTEMPTS = max(1, int(os.getenv("GITHUB_API_MAX_ATTEMPTS", "4")))
+API_RETRY_INITIAL_DELAY = float(os.getenv("GITHUB_API_RETRY_INITIAL_DELAY", "1"))
+API_RETRY_MAX_DELAY = float(os.getenv("GITHUB_API_RETRY_MAX_DELAY", "8"))
+API_RETRY_STATUSES = {500, 502, 503, 504}
 README_PATH = Path(os.getenv("OUTPUT_README", "README.md"))
 JSON_PATH = Path(os.getenv("OUTPUT_JSON", "data/starred-repos.json"))
 MAX_DESC_LEN = int(os.getenv("MAX_DESC_LEN", "140"))
@@ -202,6 +207,15 @@ def require_token() -> str:
     sys.exit(1)
 
 
+def retry_delay(attempt: int, retry_after: Optional[str] = None) -> float:
+    if retry_after:
+        try:
+            return max(0.0, min(float(retry_after), API_RETRY_MAX_DELAY))
+        except ValueError:
+            pass
+    return min(API_RETRY_INITIAL_DELAY * (2 ** (attempt - 1)), API_RETRY_MAX_DELAY)
+
+
 def github_graphql(token: str, query: str, variables: Dict[str, Any]) -> Dict[str, Any]:
     payload = json.dumps({"query": query, "variables": variables}).encode("utf-8")
     headers = {
@@ -210,16 +224,41 @@ def github_graphql(token: str, query: str, variables: Dict[str, Any]) -> Dict[st
         "Accept": "application/vnd.github+json",
         "User-Agent": "awesome-starred-list-generator",
     }
-    request = Request(API_URL, data=payload, headers=headers, method="POST")
 
-    try:
-        with urlopen(request, timeout=30) as response:
-            raw = response.read().decode("utf-8")
-    except HTTPError as exc:
-        body = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"GitHub API HTTP {exc.code}: {body}") from exc
-    except URLError as exc:
-        raise RuntimeError(f"GitHub API request failed: {exc.reason}") from exc
+    raw: Optional[str] = None
+    for attempt in range(1, API_MAX_ATTEMPTS + 1):
+        request = Request(API_URL, data=payload, headers=headers, method="POST")
+        try:
+            with urlopen(request, timeout=30) as response:
+                raw = response.read().decode("utf-8")
+            break
+        except HTTPError as exc:
+            body = exc.read().decode("utf-8", errors="replace")
+            if exc.code not in API_RETRY_STATUSES or attempt == API_MAX_ATTEMPTS:
+                raise RuntimeError(f"GitHub API HTTP {exc.code}: {body}") from exc
+
+            retry_after = exc.headers.get("Retry-After") if exc.headers else None
+            delay = retry_delay(attempt, retry_after)
+            print(
+                f"GitHub API HTTP {exc.code}; retrying in {delay:.1f}s "
+                f"({attempt}/{API_MAX_ATTEMPTS}).",
+                file=sys.stderr,
+            )
+            time.sleep(delay)
+        except URLError as exc:
+            if attempt == API_MAX_ATTEMPTS:
+                raise RuntimeError(f"GitHub API request failed: {exc.reason}") from exc
+
+            delay = retry_delay(attempt)
+            print(
+                f"GitHub API request failed: {exc.reason}; retrying in {delay:.1f}s "
+                f"({attempt}/{API_MAX_ATTEMPTS}).",
+                file=sys.stderr,
+            )
+            time.sleep(delay)
+
+    if raw is None:
+        raise RuntimeError("GitHub API request failed without a response.")
 
     parsed = json.loads(raw)
     if "errors" in parsed and parsed["errors"]:

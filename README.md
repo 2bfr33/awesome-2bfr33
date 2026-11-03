@@ -2,18 +2,18 @@
 
 Auto-generated list of GitHub stars for **2bfr33**.
 
-![Total](https://img.shields.io/badge/total-70-blue?style=flat-square) ![Active](https://img.shields.io/badge/active-69-brightgreen?style=flat-square) ![Slower](https://img.shields.io/badge/slower-1-orange?style=flat-square) ![Auto-update](https://img.shields.io/badge/auto--update-daily-lightgrey?style=flat-square)
+![Total](https://img.shields.io/badge/total-72-blue?style=flat-square) ![Active](https://img.shields.io/badge/active-71-brightgreen?style=flat-square) ![Slower](https://img.shields.io/badge/slower-1-orange?style=flat-square) ![Auto-update](https://img.shields.io/badge/auto--update-daily-lightgrey?style=flat-square)
 
-> Last snapshot: 2026-11-02 12:27 UTC
+> Last snapshot: 2026-11-03 11:56 UTC
 
 ## Group Index
 
 [Reference Lists](#reference-lists) (2)<br>
 [AI and Automation](#ai-and-automation) (7)<br>
 [Self-Hosting and Homelab](#self-hosting-and-homelab) (22)<br>
-[DevOps and Security](#devops-and-security) (7)<br>
+[DevOps and Security](#devops-and-security) (8)<br>
 [Media and Content](#media-and-content) (9)<br>
-[System, Desktop and Mobile](#system-desktop-and-mobile) (9)<br>
+[System, Desktop and Mobile](#system-desktop-and-mobile) (10)<br>
 [Developer Tools](#developer-tools) (13)<br>
 [Other](#other) (1)<br>
 
@@ -21,53 +21,55 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 | # | Repository | Stars | Language |
 |---|-----------|-------|----------|
-| 1 | [morluto/rea](https://github.com/morluto/rea) | ⭐ 420.9K | `TypeScript` |
-| 2 | [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | ⭐ 333.0K | `—` |
-| 3 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | ⭐ 224.0K | `TypeScript` |
-| 4 | [massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts) | ⭐ 197.3K | `Batchfile` |
-| 5 | [open-webui/open-webui](https://github.com/open-webui/open-webui) | ⭐ 157.5K | `Python` |
+| 1 | [morluto/rea](https://github.com/morluto/rea) | ⭐ 425.1K | `TypeScript` |
+| 2 | [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | ⭐ 333.3K | `—` |
+| 3 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | ⭐ 224.2K | `TypeScript` |
+| 4 | [massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts) | ⭐ 197.5K | `Batchfile` |
+| 5 | [open-webui/open-webui](https://github.com/open-webui/open-webui) | ⭐ 157.6K | `Python` |
 
 ## Recently Starred (last 30 days)
 
-1. **[lyfie-org/papyra](https://github.com/lyfie-org/papyra)** — Star if Papyra keeps your notes yours! A self-hosted, Google Keep-style notes app where ever...
-2. **[usememos/memos](https://github.com/usememos/memos)** — Memos is an open-source, self-hosted note-taking app that brings your everyday thoughts toge...
-3. **[storytold/artcraft](https://github.com/storytold/artcraft)** — ArtCraft is an intentional crafting engine for artists, designers, and filmmakers
-4. **[storytold/photocraft](https://github.com/storytold/photocraft)** — PhotoCraft: An open-source, photo editor written by scratch in pure Rust
-5. **[morluto/rea](https://github.com/morluto/rea)** — Reverse engineer anything with agents, from app behavior down to native binaries.
+1. **[floci-io/floci](https://github.com/floci-io/floci)** — Light, fluffy, and always free - The AWS Local Emulator alternative
+2. **[BCUninstaller/Bulk-Crap-Uninstaller](https://github.com/BCUninstaller/Bulk-Crap-Uninstaller)** — Remove large amounts of unwanted applications quickly.
+3. **[lyfie-org/papyra](https://github.com/lyfie-org/papyra)** — Star if Papyra keeps your notes yours! A self-hosted, Google Keep-style notes app where ever...
+4. **[usememos/memos](https://github.com/usememos/memos)** — Memos is an open-source, self-hosted note-taking app that brings your everyday thoughts toge...
+5. **[storytold/artcraft](https://github.com/storytold/artcraft)** — ArtCraft is an intentional crafting engine for artists, designers, and filmmakers
+6. **[storytold/photocraft](https://github.com/storytold/photocraft)** — PhotoCraft: An open-source, photo editor written by scratch in pure Rust
+7. **[morluto/rea](https://github.com/morluto/rea)** — Reverse engineer anything with agents, from app behavior down to native binaries.
 
-## Active Projects (69)
+## Active Projects (71)
 
 <h3 id="reference-lists">Reference Lists <sup>(2)</sup></h3>
-
-- **[awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)**
-  A list of Free Software network services and web applications which can be hosted on your own servers<br>
-  <sub>Unknown | ★ 333.0K | pushed 2026-11-02 | fresh this week</sub>
 
 - **[pluja/awesome-privacy](https://github.com/pluja/awesome-privacy)**
   Awesome Privacy - A curated list of services and alternatives that respect your privacy because PRIVACY MATTERS.<br>
   <sub>Python | ★ 20.2K | pushed 2026-11-02 | fresh this week</sub>
 
+- **[awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)**
+  A list of Free Software network services and web applications which can be hosted on your own servers<br>
+  <sub>Unknown | ★ 333.3K | pushed 2026-11-02 | fresh this week</sub>
+
 <h3 id="ai-and-automation">AI and Automation <sup>(7)</sup></h3>
-
-- **[davila7/claude-code-templates](https://github.com/davila7/claude-code-templates)**
-  CLI tool for configuring and monitoring Claude Code<br>
-  <sub>Python | ★ 33.1K | pushed 2026-11-02 | fresh this week</sub>
-
-- **[anomalyco/opencode](https://github.com/anomalyco/opencode)**
-  The open source coding agent.<br>
-  <sub>TypeScript | ★ 224.0K | pushed 2026-11-02 | fresh this week</sub>
 
 - **[morluto/rea](https://github.com/morluto/rea)**
   Reverse engineer anything with agents, from app behavior down to native binaries.<br>
-  <sub>TypeScript | ★ 420.9K | pushed 2026-11-02 | fresh this week</sub>
+  <sub>TypeScript | ★ 425.1K | pushed 2026-11-03 | fresh this week</sub>
 
 - **[Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI)**
   The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in th...<br>
-  <sub>Python | ★ 144.6K | pushed 2026-11-02 | fresh this week</sub>
+  <sub>Python | ★ 144.8K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[davila7/claude-code-templates](https://github.com/davila7/claude-code-templates)**
+  CLI tool for configuring and monitoring Claude Code<br>
+  <sub>Python | ★ 33.1K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[anomalyco/opencode](https://github.com/anomalyco/opencode)**
+  The open source coding agent.<br>
+  <sub>TypeScript | ★ 224.2K | pushed 2026-11-03 | fresh this week</sub>
 
 - **[pbakaus/impeccable](https://github.com/pbakaus/impeccable)**
   The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.<br>
-  <sub>Rust | ★ 100.0K | pushed 2026-11-01 | fresh this week</sub>
+  <sub>Rust | ★ 101.0K | pushed 2026-11-02 | fresh this week</sub>
 
 - **[nullclaw/nullclaw](https://github.com/nullclaw/nullclaw)**
   Fastest, smallest, and fully autonomous AI assistant infrastructure written in Zig<br>
@@ -79,61 +81,65 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 <h3 id="self-hosting-and-homelab">Self-Hosting and Homelab <sup>(21)</sup></h3>
 
-- **[gethomepage/homepage](https://github.com/gethomepage/homepage)**
-  A highly customizable homepage (or startpage / application dashboard) with Docker and service API integrations.<br>
-  <sub>JavaScript | ★ 33.5K | pushed 2026-11-02 | fresh this week</sub>
-
-- **[lyfie-org/papyra](https://github.com/lyfie-org/papyra)**
-  Star if Papyra keeps your notes yours! A self-hosted, Google Keep-style notes app where every note is a plain Markdown file on your disk....<br>
-  <sub>C# | ★ 115 | pushed 2026-11-02 | fresh this week</sub>
-
-- **[rustdesk/rustdesk](https://github.com/rustdesk/rustdesk)**
-  An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.<br>
-  <sub>Rust | ★ 127.9K | pushed 2026-11-02 | fresh this week</sub>
-
-- **[usememos/memos](https://github.com/usememos/memos)**
-  Memos is an open-source, self-hosted note-taking app that brings your everyday thoughts together in a personal timeline. Your data stays...<br>
-  <sub>Go | ★ 64.2K | pushed 2026-11-02 | fresh this week</sub>
-
-- **[ZoeyVid/NPMplus](https://github.com/ZoeyVid/NPMplus)**
-  a fork of nginx-proxy-manager<br>
-  <sub>JavaScript | ★ 2.4K | pushed 2026-11-02 | fresh this week</sub>
-
-- **[nicotsx/zerobyte](https://github.com/nicotsx/zerobyte)**
-  Backup automation for self-hosters. Built on top of restic<br>
-  <sub>TypeScript | ★ 7.1K | pushed 2026-11-02 | fresh this week</sub>
+- **[kimdre/doco-cd](https://github.com/kimdre/doco-cd)**
+  Docker Compose Continuous Deployment<br>
+  <sub>Go | ★ 1.8K | pushed 2026-11-03 | fresh this week</sub>
 
 - **[community-scripts/ProxmoxVE](https://github.com/community-scripts/ProxmoxVE)**
   Proxmox VE Helper-Scripts (Community Edition)<br>
-  <sub>Shell | ★ 30.0K | pushed 2026-11-02 | fresh this week</sub>
+  <sub>Shell | ★ 30.0K | pushed 2026-11-03 | fresh this week</sub>
 
 - **[HeyPuter/puter](https://github.com/HeyPuter/puter)**
   🌐 The Internet Computer! Free, Open-Source, and Self-Hostable.<br>
-  <sub>TypeScript | ★ 44.1K | pushed 2026-11-02 | fresh this week</sub>
+  <sub>TypeScript | ★ 44.1K | pushed 2026-11-03 | fresh this week</sub>
 
-- **[kimdre/doco-cd](https://github.com/kimdre/doco-cd)**
-  Docker Compose Continuous Deployment<br>
-  <sub>Go | ★ 1.8K | pushed 2026-11-02 | fresh this week</sub>
+- **[lyfie-org/papyra](https://github.com/lyfie-org/papyra)**
+  Star if Papyra keeps your notes yours! A self-hosted, Google Keep-style notes app where every note is a plain Markdown file on your disk....<br>
+  <sub>C# | ★ 119 | pushed 2026-11-03 | fresh this week</sub>
 
-- **[hackthedev/dcts-shipping](https://github.com/hackthedev/dcts-shipping)**
-  DCTS is an ambitious project with the goal to offer absolute independence through software with a no-bullshit mindset completely for free...<br>
-  <sub>JavaScript | ★ 640 | pushed 2026-11-02 | fresh this week</sub>
+- **[nicotsx/zerobyte](https://github.com/nicotsx/zerobyte)**
+  Backup automation for self-hosters. Built on top of restic<br>
+  <sub>TypeScript | ★ 7.1K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[rustdesk/rustdesk](https://github.com/rustdesk/rustdesk)**
+  An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.<br>
+  <sub>Rust | ★ 128.0K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[coder/code-server](https://github.com/coder/code-server)**
+  VS Code in the browser<br>
+  <sub>TypeScript | ★ 79.8K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[gethomepage/homepage](https://github.com/gethomepage/homepage)**
+  A highly customizable homepage (or startpage / application dashboard) with Docker and service API integrations.<br>
+  <sub>JavaScript | ★ 33.5K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[henrygd/beszel](https://github.com/henrygd/beszel)**
+  Lightweight server monitoring with historical data, docker stats, and alerts.<br>
+  <sub>Go | ★ 26.8K | pushed 2026-11-02 | fresh this week</sub>
 
 - **[Termix-SSH/Termix](https://github.com/Termix-SSH/Termix)**
   Self-hosted, plugin-based server management.<br>
   <sub>TypeScript | ★ 15.8K | pushed 2026-11-02 | fresh this week</sub>
 
-- **[coder/code-server](https://github.com/coder/code-server)**
-  VS Code in the browser<br>
-  <sub>TypeScript | ★ 79.8K | pushed 2026-11-01 | fresh this week</sub>
-
-- **[henrygd/beszel](https://github.com/henrygd/beszel)**
-  Lightweight server monitoring with historical data, docker stats, and alerts.<br>
-  <sub>Go | ★ 26.8K | pushed 2026-11-01 | fresh this week</sub>
+- **[ZoeyVid/NPMplus](https://github.com/ZoeyVid/NPMplus)**
+  a fork of nginx-proxy-manager<br>
+  <sub>JavaScript | ★ 2.4K | pushed 2026-11-02 | fresh this week</sub>
 
 - **[lissy93/dashy](https://github.com/lissy93/dashy)**
   🚀 A self-hostable personal dashboard built for you. Includes status-checking, widgets, themes, icon packs, a UI editor and tons more!<br>
-  <sub>Vue | ★ 26.9K | pushed 2026-10-31 | fresh this week</sub>
+  <sub>Vue | ★ 26.9K | pushed 2026-11-02 | fresh this week</sub>
+
+- **[glanceapp/glance](https://github.com/glanceapp/glance)**
+  A self-hosted dashboard that puts all your feeds in one place<br>
+  <sub>Go | ★ 38.0K | pushed 2026-11-02 | fresh this week</sub>
+
+- **[usememos/memos](https://github.com/usememos/memos)**
+  Memos is an open-source, self-hosted note-taking app that brings your everyday thoughts together in a personal timeline. Your data stays...<br>
+  <sub>Go | ★ 64.2K | pushed 2026-11-02 | fresh this week</sub>
+
+- **[hackthedev/dcts-shipping](https://github.com/hackthedev/dcts-shipping)**
+  DCTS is an ambitious project with the goal to offer absolute independence through software with a no-bullshit mindset completely for free...<br>
+  <sub>JavaScript | ★ 640 | pushed 2026-11-02 | fresh this week</sub>
 
 - **[linuxserver/Heimdall](https://github.com/linuxserver/Heimdall)**
   An Application dashboard and launcher<br>
@@ -141,11 +147,11 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 - **[sissbruecker/linkding](https://github.com/sissbruecker/linkding)**
   Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker.<br>
-  <sub>Python | ★ 11.4K | pushed 2026-10-26 | fresh this week</sub>
+  <sub>Python | ★ 11.4K | pushed 2026-10-26 | fresh this month</sub>
 
 - **[linkwarden/linkwarden](https://github.com/linkwarden/linkwarden)**
   ⚡️⚡️⚡️ Self-hosted collaborative bookmark manager to collect, read, annotate, and fully preserve what matters, all in one place.<br>
-  <sub>TypeScript | ★ 20.3K | pushed 2026-10-26 | fresh this week</sub>
+  <sub>TypeScript | ★ 20.3K | pushed 2026-10-26 | fresh this month</sub>
 
 - **[moghtech/komodo](https://github.com/moghtech/komodo)**
   🦎 a tool to build and deploy software on many servers 🦎<br>
@@ -153,29 +159,29 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 - **[louislam/dockge](https://github.com/louislam/dockge)**
   A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager<br>
-  <sub>TypeScript | ★ 24.7K | pushed 2026-10-23 | fresh this month</sub>
-
-- **[glanceapp/glance](https://github.com/glanceapp/glance)**
-  A self-hosted dashboard that puts all your feeds in one place<br>
-  <sub>Go | ★ 38.0K | pushed 2026-10-20 | fresh this month</sub>
+  <sub>TypeScript | ★ 24.8K | pushed 2026-10-23 | fresh this month</sub>
 
 - **[maxdorninger/MediaManager](https://github.com/maxdorninger/MediaManager)**
   A modern selfhosted media management system for your media library<br>
   <sub>Python | ★ 3.3K | pushed 2026-07-22 | active</sub>
 
-<h3 id="devops-and-security">DevOps and Security <sup>(7)</sup></h3>
+<h3 id="devops-and-security">DevOps and Security <sup>(8)</sup></h3>
 
-- **[apache/airflow](https://github.com/apache/airflow)**
-  Apache Airflow - A platform to programmatically author, schedule, and monitor workflows<br>
-  <sub>Python | ★ 47.3K | pushed 2026-11-02 | fresh this week</sub>
+- **[floci-io/floci](https://github.com/floci-io/floci)**
+  Light, fluffy, and always free - The AWS Local Emulator alternative<br>
+  <sub>Java | ★ 28.2K | pushed 2026-11-03 | fresh this week</sub>
 
 - **[aquasecurity/trivy](https://github.com/aquasecurity/trivy)**
   Find vulnerabilities, misconfigurations, secrets, SBOM in containers, Kubernetes, code repositories, clouds and more<br>
-  <sub>Go | ★ 38.9K | pushed 2026-11-02 | fresh this week</sub>
+  <sub>Go | ★ 38.9K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[apache/airflow](https://github.com/apache/airflow)**
+  Apache Airflow - A platform to programmatically author, schedule, and monitor workflows<br>
+  <sub>Python | ★ 47.4K | pushed 2026-11-03 | fresh this week</sub>
 
 - **[clemcer/LoggiFly](https://github.com/clemcer/LoggiFly)**
   Get Alerts from your Docker Container Logs<br>
-  <sub>Python | ★ 1.8K | pushed 2026-11-01 | fresh this week</sub>
+  <sub>Python | ★ 1.8K | pushed 2026-11-02 | fresh this week</sub>
 
 - **[AnalogJ/scrutiny](https://github.com/AnalogJ/scrutiny)**
   Hard Drive S.M.A.R.T Monitoring, Historical Trends & Real World Failure Thresholds<br>
@@ -183,7 +189,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 - **[KeygraphHQ/shannon](https://github.com/KeygraphHQ/shannon)**
   Shannon is an AI pentester for web applications and APIs. It analyzes your source code, identifies attack vectors, and executes real expl...<br>
-  <sub>TypeScript | ★ 50.9K | pushed 2026-10-27 | fresh this week</sub>
+  <sub>TypeScript | ★ 51.0K | pushed 2026-10-27 | fresh this week</sub>
 
 - **[Trooped/QuickBars](https://github.com/Trooped/QuickBars)**
   The Official QuickBars for Home Assistant Repository<br>
@@ -197,7 +203,19 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 - **[autobrr/qui](https://github.com/autobrr/qui)**
   A fast, single-binary qBittorrent web UI: manage multiple instances, automate torrent workflows, and cross-seed across trackers.<br>
-  <sub>Go | ★ 4.8K | pushed 2026-11-02 | fresh this week</sub>
+  <sub>Go | ★ 4.8K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[TypesettingTools/Aegisub](https://github.com/TypesettingTools/Aegisub)**
+  Cross-platform advanced subtitle editor<br>
+  <sub>C++ | ★ 2.0K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[mpv-player/mpv](https://github.com/mpv-player/mpv)**
+  🎥 Command line media player<br>
+  <sub>C | ★ 37.7K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[HandBrake/HandBrake](https://github.com/HandBrake/HandBrake)**
+  HandBrake's development repository<br>
+  <sub>C | ★ 24.9K | pushed 2026-11-03 | fresh this week</sub>
 
 - **[nicotine-plus/nicotine-plus](https://github.com/nicotine-plus/nicotine-plus)**
   Graphical client for the Soulseek peer-to-peer network<br>
@@ -207,43 +225,35 @@ Auto-generated list of GitHub stars for **2bfr33**.
   Curate an infinite media library<br>
   <sub>TypeScript | ★ 1.5K | pushed 2026-11-02 | fresh this week</sub>
 
-- **[mpv-player/mpv](https://github.com/mpv-player/mpv)**
-  🎥 Command line media player<br>
-  <sub>C | ★ 37.7K | pushed 2026-11-02 | fresh this week</sub>
+- **[sirrobot01/decypharr](https://github.com/sirrobot01/decypharr)**
+  Media gateway for Debrid & Usenet.<br>
+  <sub>Go | ★ 924 | pushed 2026-11-02 | fresh this week</sub>
 
 - **[slskd/slskd](https://github.com/slskd/slskd)**
   A modern client-server application for the Soulseek file sharing network.<br>
   <sub>C# | ★ 4.2K | pushed 2026-11-02 | fresh this week</sub>
 
-- **[sirrobot01/decypharr](https://github.com/sirrobot01/decypharr)**
-  Media gateway for Debrid & Usenet.<br>
-  <sub>Go | ★ 922 | pushed 2026-11-01 | fresh this week</sub>
-
-- **[TypesettingTools/Aegisub](https://github.com/TypesettingTools/Aegisub)**
-  Cross-platform advanced subtitle editor<br>
-  <sub>C++ | ★ 2.0K | pushed 2026-11-01 | fresh this week</sub>
-
-- **[HandBrake/HandBrake](https://github.com/HandBrake/HandBrake)**
-  HandBrake's development repository<br>
-  <sub>C | ★ 24.9K | pushed 2026-10-31 | fresh this week</sub>
-
 - **[rivenmedia/riven](https://github.com/rivenmedia/riven)**
   Handle your Media Library with ease!<br>
   <sub>Python | ★ 821 | pushed 2026-06-27 | active</sub>
 
-<h3 id="system-desktop-and-mobile">System, Desktop and Mobile <sup>(9)</sup></h3>
+<h3 id="system-desktop-and-mobile">System, Desktop and Mobile <sup>(10)</sup></h3>
 
 - **[duckdb/duckdb](https://github.com/duckdb/duckdb)**
   DuckDB is a high-performance analytical database system<br>
-  <sub>C++ | ★ 42.7K | pushed 2026-11-02 | fresh this week</sub>
+  <sub>C++ | ★ 42.8K | pushed 2026-11-03 | fresh this week</sub>
 
 - **[duckdb/pg_duckdb](https://github.com/duckdb/pg_duckdb)**
   DuckDB-powered Postgres for high performance apps & analytics.<br>
   <sub>C++ | ★ 3.3K | pushed 2026-11-02 | fresh this week</sub>
 
+- **[florisboard/florisboard](https://github.com/florisboard/florisboard)**
+  An open-source keyboard for Android which respects your privacy. Currently in beta.<br>
+  <sub>Kotlin | ★ 8.7K | pushed 2026-11-02 | fresh this week</sub>
+
 - **[ChrisTitusTech/winutil](https://github.com/ChrisTitusTech/winutil)**
   Chris Titus Tech's Windows Utility - Install Programs, Tweaks, Fixes, and Updates<br>
-  <sub>PowerShell | ★ 65.4K | pushed 2026-11-02 | fresh this week</sub>
+  <sub>PowerShell | ★ 65.5K | pushed 2026-11-02 | fresh this week</sub>
 
 - **[nicolargo/glances](https://github.com/nicolargo/glances)**
   Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, macOS and Windows operating systems.<br>
@@ -251,11 +261,7 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 - **[ImranR98/Obtainium](https://github.com/ImranR98/Obtainium)**
   Get Android app updates straight from the source.<br>
-  <sub>Dart | ★ 21.1K | pushed 2026-11-01 | fresh this week</sub>
-
-- **[florisboard/florisboard](https://github.com/florisboard/florisboard)**
-  An open-source keyboard for Android which respects your privacy. Currently in beta.<br>
-  <sub>Kotlin | ★ 8.7K | pushed 2026-10-31 | fresh this week</sub>
+  <sub>Dart | ★ 21.2K | pushed 2026-11-01 | fresh this week</sub>
 
 - **[valinet/ExplorerPatcher](https://github.com/valinet/ExplorerPatcher)**
   This project aims to enhance the working environment on Windows<br>
@@ -267,61 +273,65 @@ Auto-generated list of GitHub stars for **2bfr33**.
 
 - **[massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts)**
   Open-source Windows and Office activator featuring HWID, Ohook, TSforge, and Online KMS activation methods, along with advanced troublesh...<br>
-  <sub>Batchfile | ★ 197.3K | pushed 2026-10-17 | fresh this month</sub>
+  <sub>Batchfile | ★ 197.5K | pushed 2026-10-17 | fresh this month</sub>
+
+- **[BCUninstaller/Bulk-Crap-Uninstaller](https://github.com/BCUninstaller/Bulk-Crap-Uninstaller)**
+  Remove large amounts of unwanted applications quickly.<br>
+  <sub>C# | ★ 22.2K | pushed 2026-09-07 | active</sub>
 
 <h3 id="developer-tools">Developer Tools <sup>(13)</sup></h3>
 
-- **[Stremio/stremio-web](https://github.com/Stremio/stremio-web)**
-  Stremio - Freedom to Stream<br>
-  <sub>JavaScript | ★ 15.0K | pushed 2026-11-02 | fresh this week</sub>
-
 - **[open-webui/open-webui](https://github.com/open-webui/open-webui)**
   User-friendly AI Interface (Supports Ollama, OpenAI API, ...)<br>
-  <sub>Python | ★ 157.5K | pushed 2026-11-02 | fresh this week</sub>
-
-- **[storytold/photocraft](https://github.com/storytold/photocraft)**
-  PhotoCraft: An open-source, photo editor written by scratch in pure Rust<br>
-  <sub>Rust | ★ 76.1K | pushed 2026-11-02 | fresh this week</sub>
+  <sub>Python | ★ 157.6K | pushed 2026-11-03 | fresh this week</sub>
 
 - **[dbt-labs/dbt](https://github.com/dbt-labs/dbt)**
   dbt enables data analysts and engineers to transform their data using the same practices that software engineers use to build applications.<br>
-  <sub>Rust | ★ 14.1K | pushed 2026-11-02 | fresh this week</sub>
+  <sub>Rust | ★ 14.1K | pushed 2026-11-03 | fresh this week</sub>
 
-- **[mountain-loop/yaak](https://github.com/mountain-loop/yaak)**
-  The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC 🦬<br>
-  <sub>TypeScript | ★ 19.4K | pushed 2026-11-02 | fresh this week</sub>
+- **[storytold/photocraft](https://github.com/storytold/photocraft)**
+  PhotoCraft: An open-source, photo editor written by scratch in pure Rust<br>
+  <sub>Rust | ★ 76.4K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[storytold/artcraft](https://github.com/storytold/artcraft)**
+  ArtCraft is an intentional crafting engine for artists, designers, and filmmakers<br>
+  <sub>Rust | ★ 38.5K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[scrapy/scrapy](https://github.com/scrapy/scrapy)**
+  Scrapy, a fast high-level web crawling & scraping framework for Python.<br>
+  <sub>Python | ★ 65.2K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[Stremio/stremio-web](https://github.com/Stremio/stremio-web)**
+  Stremio - Freedom to Stream<br>
+  <sub>JavaScript | ★ 15.0K | pushed 2026-11-03 | fresh this week</sub>
+
+- **[lnagel/hass-komfovent](https://github.com/lnagel/hass-komfovent)**
+  Home Assistant Komfovent C6, C6M and C8 air handling units integration<br>
+  <sub>Python | ★ 53 | pushed 2026-11-03 | fresh this week</sub>
+
+- **[dagster-io/dagster](https://github.com/dagster-io/dagster)**
+  An orchestration platform for the development, production, and observation of data assets.<br>
+  <sub>Python | ★ 16.4K | pushed 2026-11-02 | fresh this week</sub>
+
+- **[searxng/searxng](https://github.com/searxng/searxng)**
+  SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither track...<br>
+  <sub>Python | ★ 39.2K | pushed 2026-11-02 | fresh this week</sub>
 
 - **[duckdb/dbt-duckdb](https://github.com/duckdb/dbt-duckdb)**
   dbt adapter for DuckDB<br>
   <sub>Python | ★ 1.4K | pushed 2026-11-02 | fresh this week</sub>
 
-- **[searxng/searxng](https://github.com/searxng/searxng)**
-  SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither track...<br>
-  <sub>Python | ★ 39.1K | pushed 2026-11-01 | fresh this week</sub>
-
-- **[scrapy/scrapy](https://github.com/scrapy/scrapy)**
-  Scrapy, a fast high-level web crawling & scraping framework for Python.<br>
-  <sub>Python | ★ 65.2K | pushed 2026-11-01 | fresh this week</sub>
-
 - **[zauberzeug/nicegui](https://github.com/zauberzeug/nicegui)**
   Create web-based user interfaces with Python. The nice way.<br>
-  <sub>Python | ★ 16.3K | pushed 2026-11-01 | fresh this week</sub>
+  <sub>Python | ★ 16.3K | pushed 2026-11-02 | fresh this week</sub>
+
+- **[mountain-loop/yaak](https://github.com/mountain-loop/yaak)**
+  The most intuitive desktop API client. Organize and execute REST, GraphQL, WebSockets, Server Sent Events, and gRPC 🦬<br>
+  <sub>TypeScript | ★ 19.4K | pushed 2026-11-02 | fresh this week</sub>
 
 - **[vemboy200/homeconnect_local_hass](https://github.com/vemboy200/homeconnect_local_hass)**
   Home Connect integration for Home Assistant using direct communication over the local network<br>
   <sub>Python | ★ 34 | pushed 2026-11-01 | fresh this week</sub>
-
-- **[storytold/artcraft](https://github.com/storytold/artcraft)**
-  ArtCraft is an intentional crafting engine for artists, designers, and filmmakers<br>
-  <sub>Rust | ★ 38.3K | pushed 2026-10-31 | fresh this week</sub>
-
-- **[dagster-io/dagster](https://github.com/dagster-io/dagster)**
-  An orchestration platform for the development, production, and observation of data assets.<br>
-  <sub>Python | ★ 16.4K | pushed 2026-10-30 | fresh this week</sub>
-
-- **[lnagel/hass-komfovent](https://github.com/lnagel/hass-komfovent)**
-  Home Assistant Komfovent C6, C6M and C8 air handling units integration<br>
-  <sub>Python | ★ 53 | pushed 2026-10-29 | fresh this week</sub>
 
 <h3 id="other">Other <sup>(1)</sup></h3>
 
